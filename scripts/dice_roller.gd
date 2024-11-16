@@ -5,8 +5,9 @@ class_name DiceRoller
 @export var spr: Sprite2D;
 @onready var anim_spr = $AnimatedSprite2D
 @export var sides: int = 6;
-@export var score: int = 0;
+@export var score: int = 1;
 @export var last_roll: int = 0;
+
 var dice_roll_sound = preload("res://assets/sounds/dice_roll.wav")
 
 var bad_num_sound
@@ -14,6 +15,8 @@ var event_num_sound
 var best_num_sound
 
 var anim_count = 0
+
+var event_counter = 0
 
 func _ready() -> void:
 	spr = $Sprite2D
@@ -28,6 +31,12 @@ func _ready() -> void:
 		best_num_sound = preload("res://assets/sounds/hob_best_num.wav")
 	
 func roll() -> int:
+#	weight dice after two boring roll
+	if event_counter >= 2:
+		var rand = (randi() % (sides / 2) + 1) * 2 
+		print("weight: ", rand)
+		return rand
+	
 	return randi() % sides + 1
 
 func update_die() -> void:
@@ -49,6 +58,7 @@ func animation_looped() -> void:
 		var roll: int = roll()
 		spr.frame = roll - 1
 		is_rolled = true
+		event_counter += 1
 		
 		if roll == 6:
 			$AudioStreamPlayer2D.stream = best_num_sound
@@ -56,8 +66,6 @@ func animation_looped() -> void:
 		else:
 			$AudioStreamPlayer2D.stream = bad_num_sound
 			$AudioStreamPlayer2D.play()
-			
-			
 		
 		spr.visible = true
 		anim_spr.visible = false
