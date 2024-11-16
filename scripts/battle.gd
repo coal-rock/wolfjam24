@@ -59,7 +59,7 @@ func roll_finished(r: DiceRoller, roll:int):
 		timer.one_shot = true 
 		timer.start()
 		
-		if dice1.spr.frame == 6 && dice2.spr.frame == 6:
+		if dice1.spr.frame == 5 && dice2.spr.frame == 5:
 			print("implement")
 			return
 		
