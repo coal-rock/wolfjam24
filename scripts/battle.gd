@@ -16,7 +16,7 @@ enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scene = preload("res://mash_qte.tscn")
+var qte_scenes = [preload("res://mash_qte.tscn"), preload("res://irl_qte.tscn")]
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
@@ -41,7 +41,7 @@ func roll_finished(r: DiceRoller):
 			await get_tree().create_timer(2).timeout
 			$BattleText.visible = false
 			print("BOTH MATCH")
-			active_qte = qte_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+			active_qte = qte_scenes[randi() % len(qte_scenes)].instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 			active_qte.battle = self
 			get_tree().get_root().add_child(active_qte)
 
