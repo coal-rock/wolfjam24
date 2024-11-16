@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://2svwgugjltj0"]
+
+[ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="1_bvo35"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw5ws"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk85x"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_right = 223.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_bvo35")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw5ws")
+text = "Play"
+
+[node name="Button" type="Button" parent="Button"]
+offset_left = 1.0
+offset_top = 194.0
+offset_right = 447.0
+offset_bottom = 374.0
+theme_override_fonts/font = ExtResource("1_bvo35")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mk85x")
+text = "Play"
