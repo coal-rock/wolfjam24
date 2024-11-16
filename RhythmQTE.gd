@@ -10,18 +10,30 @@ var timeleft = -1
 var score = 0
 
 @onready
-var mylabel = get_node("Node2D/Label")
+var mylabel = $Label
 
 func _ready() -> void:
 	reinit()
+var allowinp = false
 	
 func reinit() -> void:
+	var tx = "Press the direction in 3.."
+	mylabel.text = tx
+	await get_tree().create_timer(1).timeout
+	mylabel.text = tx + "2.."
+	await get_tree().create_timer(1).timeout
+	mylabel.text = tx + "2.. 1.."
+	await get_tree().create_timer(1).timeout
+	mylabel.text = "press!"
 	timeleft = 300
 	selectedinput = inputs[randi() % len(inputs)]
+	allowinp = true
+	# show direction now
 
 var byp = 0
-
 func _process(delta: float) -> void:
+	if !allowinp:
+		return
 	var inputs1 = {
 		"up": battle.up1,
 		"down": battle.down1,
@@ -37,10 +49,8 @@ func _process(delta: float) -> void:
 	}
 	if byp == 1:
 		return
-	mylabel.text = "PRESS %s" % selectedinput
 	if Input.is_action_just_pressed(inputs1[selectedinput]):
 		byp = 1
-		#await get_tree().create_timer(1).timeout
 		byp = 0
 		battle.qte_finished(battle.dice1)
 	if Input.is_action_just_pressed(inputs2[selectedinput]):

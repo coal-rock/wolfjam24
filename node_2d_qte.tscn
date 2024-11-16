@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs8kb18qfqljh"]
+[gd_scene load_steps=3 format=3 uid="uid://cs8kb18qfqljh"]
 
 [ext_resource type="Script" path="res://RhythmQTE.gd" id="1_upxr5"]
+[ext_resource type="FontFile" uid="uid://qqerndesghjx" path="res://assets/fonts/GothicScribble.ttf" id="2_jwk6o"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_upxr5")
 
-[node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(10.73, 10.73)
-
-[node name="Label" type="Label" parent="Node2D"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 140.0
+offset_right = 1493.0
+offset_bottom = 419.0
+theme_override_fonts/font = ExtResource("2_jwk6o")
+theme_override_font_sizes/font_size = 65
 text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
