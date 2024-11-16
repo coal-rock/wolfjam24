@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=11 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
 [ext_resource type="Texture2D" uid="uid://dv2b40ep0bjq4" path="res://assets/dice/d6.png" id="3_ovybg"]
 [ext_resource type="Texture2D" uid="uid://dbbx13uvgw0qu" path="res://assets/wooden_interior.png" id="4_d2mj2"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="4_sea53"]
-[ext_resource type="FontFile" uid="uid://fqn8vd3j78ki" path="res://assets/fonts/GothicHijinxRough.ttf" id="5_od18k"]
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="6_dw16j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
@@ -368,10 +367,12 @@ sources/0 = SubResource("TileSetAtlasSource_ims2e")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01t2n"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "dice1", "dice2")]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
 script = ExtResource("1_xenqr")
 score1 = NodePath("Player 1 Score")
 score2 = NodePath("Player 2 Score")
+coin1 = NodePath("Player 1 Coin")
+coin2 = NodePath("Player 2 Coin")
 dice1 = NodePath("Player 1")
 dice2 = NodePath("Player 2")
 inputName1 = "player1Roll"
@@ -384,6 +385,7 @@ up2 = "player2Up"
 left2 = "player2Left"
 down2 = "player2Down"
 right2 = "player2Right"
+time_since_coin = 2.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -493,37 +495,61 @@ hframes = 6
 frame = 5
 
 [node name="Player 2 Coin" type="Node2D" parent="."]
-position = Vector2(1408, 64)
+position = Vector2(1615, 288)
 
-[node name="Label" type="Label" parent="Player 2 Coin"]
-offset_left = 72.0
-offset_top = -68.0
-offset_right = 117.0
-offset_bottom = 82.0
-theme_override_fonts/font = ExtResource("5_od18k")
-theme_override_font_sizes/font_size = 128
-text = "0"
-
-[node name="Coin" type="Sprite2D" parent="Player 2 Coin"]
+[node name="c1" type="Sprite2D" parent="Player 2 Coin"]
 texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
 
-[node name="Player 1 Coin" type="Node2D" parent="."]
-position = Vector2(448, 64)
-
-[node name="Label" type="Label" parent="Player 1 Coin"]
-offset_left = 72.0
-offset_top = -68.0
-offset_right = 117.0
-offset_bottom = 82.0
-theme_override_fonts/font = ExtResource("5_od18k")
-theme_override_font_sizes/font_size = 128
-text = "0"
-
-[node name="Coin" type="Sprite2D" parent="Player 1 Coin"]
+[node name="c2" type="Sprite2D" parent="Player 2 Coin"]
 texture_filter = 1
+position = Vector2(72, -3.05176e-05)
+scale = Vector2(5, 5)
+texture = ExtResource("6_dw16j")
+hframes = 9
+
+[node name="c3" type="Sprite2D" parent="Player 2 Coin"]
+texture_filter = 1
+position = Vector2(144, -1.45519e-11)
+scale = Vector2(5, 5)
+texture = ExtResource("6_dw16j")
+hframes = 9
+
+[node name="c4" type="Sprite2D" parent="Player 2 Coin"]
+texture_filter = 1
+position = Vector2(208, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("6_dw16j")
+hframes = 9
+
+[node name="Player 1 Coin" type="Node2D" parent="."]
+position = Vector2(95, 288)
+
+[node name="c1" type="Sprite2D" parent="Player 1 Coin"]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("6_dw16j")
+hframes = 9
+
+[node name="c2" type="Sprite2D" parent="Player 1 Coin"]
+texture_filter = 1
+position = Vector2(72, -3.05176e-05)
+scale = Vector2(5, 5)
+texture = ExtResource("6_dw16j")
+hframes = 9
+
+[node name="c3" type="Sprite2D" parent="Player 1 Coin"]
+texture_filter = 1
+position = Vector2(144, -1.45519e-11)
+scale = Vector2(5, 5)
+texture = ExtResource("6_dw16j")
+hframes = 9
+
+[node name="c4" type="Sprite2D" parent="Player 1 Coin"]
+texture_filter = 1
+position = Vector2(208, 0)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
