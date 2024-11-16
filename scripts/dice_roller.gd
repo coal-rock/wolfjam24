@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 class_name DiceRoller
 @export var is_rolled = false;
@@ -46,7 +46,19 @@ func update_die() -> void:
 	anim_spr.play("d6_roll")
 	$AudioStreamPlayer2D.stream = dice_roll_sound
 	$AudioStreamPlayer2D.play()
+	shake_loop()
 	
+var rolldone = false
+func shake_loop():
+	var sx = position.x
+	var sy = position.y
+	rolldone = false
+	while !rolldone:
+		position.x = sx + randf()*10
+		position.y = sy + randf()*10
+		await get_tree().create_timer(0.1).timeout
+	position.x = sx
+	position.y = sy
 
 func animation_looped() -> void:
 	anim_count += 1
@@ -71,4 +83,6 @@ func animation_looped() -> void:
 		anim_spr.visible = false
 		anim_count = 0
 		last_roll = roll
+		
+		rolldone = true
 		get_parent().roll_finished(self, roll)

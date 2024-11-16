@@ -124,8 +124,16 @@ func start_qte(scene):
 # called by the qte script
 func qte_finished(whoWon: DiceRoller):
 	active_qte.queue_free()
-	change_state(GameState.DICE)
 	print("dice %s won" % whoWon)
+	$WinQTEText.visible = true
+	if whoWon == dice1:
+		$WinQTEText.text = "Goblin Victory"
+	if whoWon == dice2:
+		$WinQTEText.text = "Hobgoblin Victory"
+	
+	await get_tree().create_timer(2).timeout
+	change_state(GameState.DICE)
+	$WinQTEText.visible = false
 	if qte_is_battle:
 		if whoWon == roller:
 			roller.score += 1

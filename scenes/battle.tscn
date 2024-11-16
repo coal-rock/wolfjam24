@@ -535,3 +535,15 @@ offset_right = 1820.0
 offset_bottom = 556.0
 theme_override_font_sizes/font_size = 200
 text = "HOBGOBLIN WINS"
+
+[node name="WinQTEText" type="Label" parent="."]
+visible = false
+offset_left = 79.0
+offset_top = 385.0
+offset_right = 1848.0
+offset_bottom = 734.0
+theme_override_fonts/font = ExtResource("4_sea53")
+theme_override_font_sizes/font_size = 150
+text = "HOBGOBLIN WINS"
+horizontal_alignment = 1
+vertical_alignment = 1

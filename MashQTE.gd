@@ -7,8 +7,16 @@ var c2 = 0
 var timeleft = 300
 
 func _ready() -> void:
-	$Label.text = "mash buttons.. get ready"
+	var tx = "mash your button as fast as you can"
+	$Label.text = tx
 	await get_tree().create_timer(1).timeout
+	$Label.text = tx + "\n in 3.."
+	await get_tree().create_timer(1).timeout
+	$Label.text = tx + "\n in 3.. 2.."
+	await get_tree().create_timer(1).timeout
+	$Label.text = tx + "\n in 3.. 2.. 1"
+	await get_tree().create_timer(1).timeout
+	$Label.text = "mash your button as fast as you can !!!"
 	allowinp = true
 
 func _process(delta: float) -> void:
