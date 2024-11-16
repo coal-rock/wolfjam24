@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://sm4umm5qhp86"]
 
-[ext_resource type="Script" path="res://scenes/coin.gd" id="1_kjy65"]
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_kjy65"]
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="1_ot7n1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52pk2"]
@@ -75,11 +75,10 @@ animations = [{
 }]
 
 [node name="Coin" type="Node2D"]
-show_behind_parent = true
+scale = Vector2(5, 5)
 script = ExtResource("1_kjy65")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-show_behind_parent = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_0g1vw")
 autoplay = "default"
