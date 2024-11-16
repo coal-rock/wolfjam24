@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs8kb18qfqljh"]
+
+[ext_resource type="Script" path="res://qte.gd" id="1_upxr5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_upxr5")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(10.73, 10.73)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "test"
