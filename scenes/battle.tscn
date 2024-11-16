@@ -508,3 +508,7 @@ offset_right = 1122.0
 offset_bottom = 175.0
 theme_override_font_sizes/font_size = 128
 text = "Battle!!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
