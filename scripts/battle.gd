@@ -10,8 +10,6 @@ class_name Battle
 @export var inputName1: String
 @export var inputName2: String
 
-
-
 @export var up1: String
 @export var left1: String
 @export var down1: String
@@ -23,12 +21,16 @@ class_name Battle
 @export var right2: String
 
 @onready var vignete = $Vignete 
+@onready var timer = $Timer
 
 enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
 var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tscn"), preload("res://goomba_qte.tscn")]
+var battle_start = preload("res://assets/sounds/battle_start.wav")
+var qte_start = preload("res://assets/sounds/qte_start.wav")
+
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
@@ -47,20 +49,37 @@ var roller: DiceRoller
 var qte_is_battle = false
 	
 func roll_finished(r: DiceRoller, roll:int):
+	
+	
 	if dice1.is_rolled && dice2.is_rolled:
 		print("BOTH ROLL")
 		dice1.is_rolled = false
 		dice2.is_rolled = false
+		timer.wait_time = 1.0
+		timer.one_shot = true 
+		timer.start()
+		
+		if dice1.spr.frame == 5 && dice2.spr.frame == 5:
+			print("implement")
+			return
 		
 		# if both are the same do qte
-		if dice1.spr.frame == dice2.spr.frame:
+		if dice1.spr.frame == dice2.spr.frame && dice1.score > 0 && dice2.score > 0:
 			qte_is_battle = false
+			await get_tree().create_timer(0.5).timeout
+			$AudioStreamPlayer2D.stream = qte_start
+			$AudioStreamPlayer2D.play()
+			await get_tree().create_timer(1.0).timeout
 			start_qte(qte_scenes[randi() % len(qte_scenes)])
 		
-	if roll == 6:
-		roller = r
-		qte_is_battle = true
-		start_qte(preload("res://irl_qte.tscn"))
+		if roll == 6:
+			roller = r
+			qte_is_battle = true
+			await get_tree().create_timer(0.5).timeout
+			$AudioStreamPlayer2D.stream = battle_start
+			$AudioStreamPlayer2D.play()
+			await get_tree().create_timer(1.0).timeout
+			start_qte(preload("res://irl_qte.tscn"))
 
 func start_qte(scene):
 	change_state(GameState.QTE)
@@ -102,7 +121,7 @@ func update_score(ui: Node2D, score: int) -> void:
 		ui.get_node("d" + str(i + 1)).visible = true
 
 func _process(delta):
-	if state == GameState.DICE:
+	if state == GameState.DICE && timer.is_stopped():
 		if Input.is_action_just_pressed(inputName1) && !dice1.is_rolled:
 			handle_roll(dice1)
 		if Input.is_action_just_pressed(inputName2) && !dice2.is_rolled:
