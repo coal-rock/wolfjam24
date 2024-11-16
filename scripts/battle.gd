@@ -4,6 +4,9 @@ class_name Battle
 @export var score1: Node2D
 @export var score2: Node2D
 
+@export var coin1: Node2D
+@export var coin2: Node2D
+
 @export var dice1: DiceRoller
 @export var dice2: DiceRoller
 
@@ -168,13 +171,23 @@ func update_score(ui: Node2D, score: int) -> void:
 	
 	for i in score:
 		ui.get_node("d" + str(i + 1)).visible = true
+		
+func reset_coins(coin_ui: Node2D) -> void:
+	for i in 4:
+		coin_ui.get_node("c" + str(i + 1)).visible = false
+
+func update_coins(coin_ui: Node2D, coin_count: int) -> void:
+	reset_coins(coin_ui)
+	
+	for i in coin_count:
+		coin_ui.get_node("c" + str(i + 1)).visible = true
 
 func _process(delta):
 	if state == GameState.DICE:
 		time_since_coin += delta
 	
 	if state == GameState.DICE && timer.is_stopped():
-		if time_since_coin > 20 && coin_present == false:
+		if time_since_coin > 2 && coin_present == false:
 			$AudioStreamPlayer2D.stream = coin_spawn
 			$AudioStreamPlayer2D.play()
 			coin_instance = coin.instantiate()
@@ -212,7 +225,8 @@ func _process(delta):
 				
 		update_score(score1, dice1.score)
 		update_score(score2, dice2.score)
-	
+		update_coins(coin1, dice1.coins)
+		update_coins(coin2, dice2.coins)
 	if state == GameState.WIN:
 		win_vignette.visible = true
 		win_text.text = winner + " wins!"
