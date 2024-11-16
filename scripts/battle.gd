@@ -32,7 +32,7 @@ enum GameState { DICE, QTE, MENU, WIN }
 @export var win_condition: int = 6
 @export var winner: String = ""
 
-var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tscn"), preload("res://goomba_qte.tscn")]
+var qte_scenes = [preload("res://node_2d_qte.tscn")]
 var battle_start = preload("res://assets/sounds/battle_start.wav")
 var qte_start = preload("res://assets/sounds/qte_start.wav")
 
@@ -82,7 +82,8 @@ func roll_finished(r: DiceRoller, roll:int):
 			return
 		
 		# if both are the same do qte
-		if dice1.spr.frame == dice2.spr.frame && dice1.score > 0 && dice2.score > 0:
+		#if dice1.spr.frame == dice2.spr.frame && dice1.score > 0 && dice2.score > 0:
+		if true:
 			qte_is_battle = false
 			dice1.event_counter = 0
 			dice2.event_counter = 0
@@ -133,11 +134,12 @@ func start_qte(scene):
 func qte_finished(whoWon: DiceRoller):
 	active_qte.queue_free()
 	print("dice %s won" % whoWon)
-	$WinQTEText.visible = true
-	if whoWon == dice1:
-		$WinQTEText.text = "Goblin Victory"
-	if whoWon == dice2:
-		$WinQTEText.text = "Hobgoblin Victory"
+	if !qte_is_battle:
+		$WinQTEText.visible = true
+		if whoWon == dice1:
+			$WinQTEText.text = "Goblin Victory"
+		if whoWon == dice2:
+			$WinQTEText.text = "Hobgoblin Victory"
 	
 	await get_tree().create_timer(2).timeout
 	change_state(GameState.DICE)
