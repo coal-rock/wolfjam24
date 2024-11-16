@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://2svwgugjltj0"]
+[gd_scene load_steps=10 format=3 uid="uid://2svwgugjltj0"]
 
 [ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_1kq5q"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="1_bvo35"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qag4l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0flm"]
 
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qag4l")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -101,3 +103,5 @@ theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_to4wj")
 text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
