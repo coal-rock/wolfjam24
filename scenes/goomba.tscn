@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cappyidm31d5h"]
+
+[ext_resource type="Script" path="res://scenes/goomba.gd" id="1_w0ehe"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s705p"]
+
+[node name="Goomba" type="Sprite2D"]
+scale = Vector2(40, 40)
+texture = SubResource("PlaceholderTexture2D_s705p")
+script = ExtResource("1_w0ehe")

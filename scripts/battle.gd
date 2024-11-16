@@ -32,10 +32,10 @@ enum GameState { DICE, QTE, MENU, WIN }
 @export var win_condition: int = 6
 @export var winner: String = ""
 
+var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tscn"), preload("res://goomba_qte.tscn")]
 var battle_start = preload("res://assets/sounds/battle_start.wav")
 var qte_start = preload("res://assets/sounds/qte_start.wav")
 
-var qte_scenes = [preload("res://node_2d_qte.tscn")]
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
