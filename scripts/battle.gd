@@ -150,13 +150,26 @@ func qte_finished(whoWon: DiceRoller):
 	if qte_is_battle:
 		if whoWon == roller:
 			roller.score += 1
+			if roller == dice1:
+				splash_frame($Goblin, 3)
+			else:
+				splash_frame($Hobgoblin, 3)
 	else:
 		if whoWon == dice1:
 			dice2.score -= 1
 			dice1.score += 1
+			splash_frame($Goblin, 3)
+			splash_frame($Hobgoblin, 1)
 		else:
 			dice1.score -= 1
 			dice2.score += 1
+			splash_frame($Goblin, 1)
+			splash_frame($Hobgoblin, 3)
+
+func splash_frame(who: AnimatedSprite2D, frame: int):
+	who.frame = frame
+	await get_tree().create_timer(1.5).timeout
+	who.frame = 0
 
 func _on_ready() -> void:
 	handle_roll(dice1)
