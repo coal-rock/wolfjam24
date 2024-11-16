@@ -5,6 +5,7 @@ class_name DiceRoller
 @export var spr: Sprite2D;
 @onready var anim_spr = $AnimatedSprite2D
 @export var sides: int = 6;
+var anim_count = 0
 
 func _ready() -> void:
 	spr = $Sprite2D
@@ -19,11 +20,15 @@ func update_die() -> void:
 	anim_spr.play("d6_roll")
 
 func animation_looped() -> void:
-	anim_spr.stop()
+	anim_count += 1
 	
-	var roll: int = roll()
-	spr.frame = roll - 1
-	is_rolled = true
-	
-	spr.visible = true
-	anim_spr.visible = false
+	if anim_count == 2:
+		anim_spr.stop()
+		
+		var roll: int = roll()
+		spr.frame = roll - 1
+		is_rolled = true
+		
+		spr.visible = true
+		anim_spr.visible = false
+		anim_count = 0
