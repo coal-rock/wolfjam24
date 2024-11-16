@@ -494,9 +494,9 @@ texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
 
-[node name="Vignete" type="Sprite2D" parent="Player 2 Score"]
+[node name="Vignete" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 0.74902)
-position = Vector2(-105.125, 79.2083)
-scale = Vector2(323.25, 179.917)
+position = Vector2(969.25, 539.25)
+scale = Vector2(1939.5, 1079.5)
 texture = SubResource("PlaceholderTexture2D_0yp0r")
