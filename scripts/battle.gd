@@ -74,9 +74,9 @@ func update_score(ui: Node2D, score: int) -> void:
 
 func _process(delta):
 	if state == GameState.DICE:
-		if Input.is_action_just_pressed(inputName1):
+		if Input.is_action_just_pressed(inputName1) && !dice1.is_rolled:
 			handle_roll(dice1)
-		if Input.is_action_just_pressed(inputName2):
+		if Input.is_action_just_pressed(inputName2) && !dice2.is_rolled:
 			handle_roll(dice2)
 			
 		update_score(score1, dice1.score)
