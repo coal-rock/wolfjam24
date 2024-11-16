@@ -1012,8 +1012,7 @@ text = "+2"
 [node name="Goblin" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 393)
 scale = Vector2(1.38281, 1.38281)
-sprite_frames = SubResource("SpriteFrames_inskx")
-=======
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -3
 offset_right = 1917.0
