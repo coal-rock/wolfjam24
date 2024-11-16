@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=30 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://fqn8vd3j78ki" path="res://assets/fonts/GothicHijinxRough.ttf" id="5_od18k"]
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="6_dw16j"]
 [ext_resource type="Texture2D" uid="uid://b7m1en30xl4ar" path="res://soft light.png" id="7_3d1g2"]
+[ext_resource type="Texture2D" uid="uid://n1701gwqovfx" path="res://assets/Goblin-Sheet.webp" id="8_2mpc0"]
+[ext_resource type="Texture2D" uid="uid://chlrvxvd3auh4" path="res://assets/Hobgoblin-Sheet.webp" id="9_biir7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
 texture = ExtResource("4_d2mj2")
@@ -731,6 +733,78 @@ polygon = PackedVector2Array(-8, -7, -8, 7, 6, 7, 6, -7)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01t2n"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkgha"]
+atlas = ExtResource("8_2mpc0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cwo1"]
+atlas = ExtResource("8_2mpc0")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0figa"]
+atlas = ExtResource("8_2mpc0")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w52om"]
+atlas = ExtResource("8_2mpc0")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjw18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkgha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cwo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0figa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w52om")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vuxa"]
+atlas = ExtResource("9_biir7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37b4o"]
+atlas = ExtResource("9_biir7")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rct18"]
+atlas = ExtResource("9_biir7")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2dy1"]
+atlas = ExtResource("9_biir7")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_js51h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vuxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37b4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rct18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2dy1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7h6ta"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
@@ -1012,6 +1086,10 @@ text = "+2"
 [node name="Goblin" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 393)
 scale = Vector2(1.38281, 1.38281)
+sprite_frames = SubResource("SpriteFrames_sjw18")
+
+[node name="Hobgoblin" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_js51h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -3
