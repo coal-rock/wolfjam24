@@ -5,12 +5,19 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player 2" parent="." instance=ExtResource("1_btlj0")]
-position = Vector2(1004, 77)
+position = Vector2(1020, 491)
 scale = Vector2(8, 8)
 inputName = "player2Roll"
 
 [node name="Player 1" parent="." instance=ExtResource("1_btlj0")]
-position = Vector2(145, 75)
+position = Vector2(147, 500)
 scale = Vector2(8, 8)
 inputName = "player1Roll"
 metadata/inputName = "player1Roll"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 209.0
+offset_right = 913.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 128
+text = "Goblin Dice"
