@@ -16,7 +16,7 @@ enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scene = preload("res://node_2d_qte.tscn")
+var qte_scene = preload("res://irl_qte.tscn")
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
@@ -47,9 +47,10 @@ func handle_roll(r: DiceRoller) -> void:
 	
 	
 # called by the qte script
-func qte_finished():
+func qte_finished(whoWon: DiceRoller):
 	active_qte.queue_free()
 	change_state(GameState.DICE)
+	print("dice %s won" % whoWon)
 	
 
 func _on_ready() -> void:	
