@@ -31,6 +31,8 @@ func animation_looped() -> void:
 		var roll: int = roll()
 		spr.frame = roll - 1
 		is_rolled = true
+		if roll == 6:
+			score += 1
 		
 		spr.visible = true
 		anim_spr.visible = false

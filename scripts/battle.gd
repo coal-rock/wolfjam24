@@ -51,6 +51,10 @@ func qte_finished(whoWon: DiceRoller):
 	active_qte.queue_free()
 	change_state(GameState.DICE)
 	print("dice %s won" % whoWon)
+	if whoWon == dice1:
+		dice2.score -=1
+	else:
+		dice1.score -=1
 	
 
 func _on_ready() -> void:	
@@ -65,7 +69,7 @@ func update_score(ui: Node2D, score: int) -> void:
 	reset_score(ui)
 	
 	for i in score:
-		score1.get_node("d" + str(i + 1)).visible = true
+		ui.get_node("d" + str(i + 1)).visible = true
 
 func _process(delta):
 	if state == GameState.DICE:
@@ -75,6 +79,6 @@ func _process(delta):
 			handle_roll(dice2)
 			
 		update_score(score1, dice1.score)
-		update_score(score2, dice1.score)
+		update_score(score2, dice2.score)
 	
 	
