@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8hnknky2w4vo"]
+
+[ext_resource type="Script" path="res://IRLQTE.gd" id="1_qhel7"]
+
+[node name="IrlQte" type="Node2D"]
+script = ExtResource("1_qhel7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 326.0
+offset_top = 206.0
+offset_right = 790.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 59
+text = "[name of irl game]"

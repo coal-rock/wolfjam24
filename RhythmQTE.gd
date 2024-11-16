@@ -7,8 +7,6 @@ var timeleft = -1
 
 var score = 0
 
-@export var battle: Battle
-
 @onready
 var mylabel = get_node("Node2D/Label")
 
