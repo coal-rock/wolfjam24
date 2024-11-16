@@ -1,31 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=5 format=3 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
+[ext_resource type="Texture2D" uid="uid://dv2b40ep0bjq4" path="res://assets/dice/d6.png" id="3_ovybg"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0yp0r"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("dice1", "dice2")]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "dice1", "dice2")]
 script = ExtResource("1_xenqr")
+score1 = NodePath("Player 1 Score")
+score2 = NodePath("Player 2 Score")
 dice1 = NodePath("Player 1")
 dice2 = NodePath("Player 2")
 inputName1 = "player1Roll"
 inputName2 = "player2Roll"
 
 [node name="Player 2" parent="." instance=ExtResource("2_yam4a")]
-position = Vector2(1020, 491)
-scale = Vector2(8, 8)
+position = Vector2(1600, 768)
+scale = Vector2(12, 12)
 
 [node name="Player 1" parent="." instance=ExtResource("2_yam4a")]
-position = Vector2(147, 500)
-scale = Vector2(8, 8)
+position = Vector2(320, 768)
+scale = Vector2(12, 12)
 metadata/inputName = "player1Roll"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 209.0
-offset_right = 913.0
-offset_bottom = 175.0
-theme_override_font_sizes/font_size = 128
+offset_left = 544.0
+offset_right = 1423.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 160
 text = "Goblin Dice"
 
 [node name="Vignete" type="Sprite2D" parent="."]
@@ -42,3 +45,51 @@ offset_right = 1122.0
 offset_bottom = 175.0
 theme_override_font_sizes/font_size = 128
 text = "Battle!!"
+
+[node name="Player 1 Score" type="Node2D" parent="."]
+position = Vector2(80, 64)
+scale = Vector2(6, 6)
+
+[node name="d1" type="Sprite2D" parent="Player 1 Score"]
+texture_filter = 1
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d2" type="Sprite2D" parent="Player 1 Score"]
+texture_filter = 1
+position = Vector2(20, 0)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d3" type="Sprite2D" parent="Player 1 Score"]
+texture_filter = 1
+position = Vector2(40, 0)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="Player 2 Score" type="Node2D" parent="."]
+position = Vector2(1600, 64)
+scale = Vector2(6, 6)
+
+[node name="d1" type="Sprite2D" parent="Player 2 Score"]
+texture_filter = 1
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d2" type="Sprite2D" parent="Player 2 Score"]
+texture_filter = 1
+position = Vector2(20, 0)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d3" type="Sprite2D" parent="Player 2 Score"]
+texture_filter = 1
+position = Vector2(40, 0)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5

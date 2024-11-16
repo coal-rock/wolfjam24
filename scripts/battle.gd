@@ -1,6 +1,9 @@
 extends Node2D
 class_name Battle
 
+@export var score1: Node2D
+@export var score2: Node2D
+
 @export var dice1: DiceRoller
 @export var dice2: DiceRoller
 
@@ -53,9 +56,24 @@ func _on_ready() -> void:
 	handle_roll(dice1)
 	handle_roll(dice2)
 
+func reset_score(ui: Node2D) -> void:
+	for i in 3:
+		ui.get_node("d" + str(i + 1)).visible = false
+
+func update_score(ui: Node2D, score: int) -> void:
+	reset_score(ui)
+	
+	for i in score:
+		score1.get_node("d" + str(i + 1)).visible = true
+
 func _process(delta):
 	if state == GameState.DICE:
 		if Input.is_action_just_pressed(inputName1):
 			handle_roll(dice1)
 		if Input.is_action_just_pressed(inputName2):
 			handle_roll(dice2)
+			
+		update_score(score1, dice1.score)
+		update_score(score2, dice1.score)
+	
+	
