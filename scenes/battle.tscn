@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=10 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
 [ext_resource type="Texture2D" uid="uid://dv2b40ep0bjq4" path="res://assets/dice/d6.png" id="3_ovybg"]
 [ext_resource type="Texture2D" uid="uid://dbbx13uvgw0qu" path="res://assets/wooden_interior.png" id="4_d2mj2"]
+[ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="4_sea53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
 texture = ExtResource("4_d2mj2")
@@ -400,9 +401,11 @@ scale = Vector2(12, 12)
 metadata/inputName = "player1Roll"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 544.0
-offset_right = 1423.0
-offset_bottom = 219.0
+offset_left = 542.0
+offset_top = 33.0
+offset_right = 1421.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("4_sea53")
 theme_override_font_sizes/font_size = 160
 text = "Goblin Dice"
 
@@ -505,11 +508,14 @@ texture = SubResource("PlaceholderTexture2D_0yp0r")
 
 [node name="BattleText" type="Label" parent="."]
 visible = false
-offset_left = 418.0
-offset_right = 1122.0
-offset_bottom = 175.0
+offset_left = 596.0
+offset_top = 514.0
+offset_right = 1300.0
+offset_bottom = 689.0
+theme_override_fonts/font = ExtResource("4_sea53")
 theme_override_font_sizes/font_size = 128
 text = "Battle!!"
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
