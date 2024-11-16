@@ -70,6 +70,27 @@ texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
 
+[node name="d4" type="Sprite2D" parent="Player 1 Score"]
+texture_filter = 1
+position = Vector2(0, 18)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d5" type="Sprite2D" parent="Player 1 Score"]
+texture_filter = 1
+position = Vector2(20, 18)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d6" type="Sprite2D" parent="Player 1 Score"]
+texture_filter = 1
+position = Vector2(40, 18)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
 [node name="Player 2 Score" type="Node2D" parent="."]
 position = Vector2(1600, 64)
 scale = Vector2(6, 6)
@@ -90,6 +111,27 @@ frame = 5
 [node name="d3" type="Sprite2D" parent="Player 2 Score"]
 texture_filter = 1
 position = Vector2(40, 0)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d4" type="Sprite2D" parent="Player 2 Score"]
+texture_filter = 1
+position = Vector2(0, 18)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d5" type="Sprite2D" parent="Player 2 Score"]
+texture_filter = 1
+position = Vector2(20, 18)
+texture = ExtResource("3_ovybg")
+hframes = 6
+frame = 5
+
+[node name="d6" type="Sprite2D" parent="Player 2 Score"]
+texture_filter = 1
+position = Vector2(40, 18)
 texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
