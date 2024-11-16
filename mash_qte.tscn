@@ -6,25 +6,31 @@
 script = ExtResource("1_akjvw")
 
 [node name="counter1" type="Label" parent="."]
-offset_left = 92.0
-offset_top = 414.0
-offset_right = 556.0
-offset_bottom = 496.0
+offset_left = 28.0
+offset_top = 380.0
+offset_right = 626.0
+offset_bottom = 804.0
 theme_override_font_sizes/font_size = 59
 text = "0 clicks"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="counter2" type="Label" parent="."]
 offset_left = 1322.0
 offset_top = 366.0
-offset_right = 1786.0
-offset_bottom = 448.0
+offset_right = 1892.0
+offset_bottom = 802.0
 theme_override_font_sizes/font_size = 59
 text = "0 clicks"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 578.0
+offset_left = 40.0
 offset_top = 36.0
-offset_right = 1153.0
+offset_right = 1907.0
 offset_bottom = 118.0
 theme_override_font_sizes/font_size = 59
 text = "mash your button ! !"
+horizontal_alignment = 1
+vertical_alignment = 1
