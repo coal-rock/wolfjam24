@@ -10,13 +10,25 @@ class_name Battle
 @export var inputName1: String
 @export var inputName2: String
 
+
+
+@export var up1: String
+@export var left1: String
+@export var down1: String
+@export var right1: String
+
+@export var up2: String
+@export var left2: String
+@export var down2: String
+@export var right2: String
+
 @onready var vignete = $Vignete 
 
 enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scenes = [preload("res://mash_qte.tscn")]
+var qte_scenes = [preload("res://node_2d_qte.tscn")]
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s

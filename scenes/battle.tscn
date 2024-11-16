@@ -371,6 +371,14 @@ dice1 = NodePath("Player 1")
 dice2 = NodePath("Player 2")
 inputName1 = "player1Roll"
 inputName2 = "player2Roll"
+up1 = "player1Up"
+left1 = "player1Left"
+down1 = "player1Down"
+right1 = "player1Right"
+up2 = "player2Up"
+left2 = "player2Left"
+down2 = "player2Down"
+right2 = "player2Right"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
