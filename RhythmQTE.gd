@@ -29,6 +29,14 @@ func reinit() -> void:
 	selectedinput = inputs[randi() % len(inputs)]
 	allowinp = true
 	# show direction now
+	var spriets = {
+		"up": preload("res://assets/Up.png"),
+		"down": preload("res://assets/Down.png"),
+		"left": preload("res://assets/Left.png"),
+		"right": preload("res://assets/Right.png"),
+	}
+	$Sprite2D.visible = true
+	$Sprite2D.texture = spriets[selectedinput]
 
 var byp = 0
 func _process(delta: float) -> void:

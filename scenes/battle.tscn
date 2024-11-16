@@ -455,6 +455,7 @@ scale = Vector2(6, 6)
 
 [node name="d1" type="Sprite2D" parent="Player 2 Score"]
 texture_filter = 1
+position = Vector2(40, 0)
 texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
@@ -468,14 +469,13 @@ frame = 5
 
 [node name="d3" type="Sprite2D" parent="Player 2 Score"]
 texture_filter = 1
-position = Vector2(40, 0)
 texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
 
 [node name="d4" type="Sprite2D" parent="Player 2 Score"]
 texture_filter = 1
-position = Vector2(0, 18)
+position = Vector2(40, 18)
 texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
@@ -489,7 +489,7 @@ frame = 5
 
 [node name="d6" type="Sprite2D" parent="Player 2 Score"]
 texture_filter = 1
-position = Vector2(40, 18)
+position = Vector2(0, 18)
 texture = ExtResource("3_ovybg")
 hframes = 6
 frame = 5
