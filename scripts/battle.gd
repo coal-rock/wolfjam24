@@ -38,7 +38,7 @@ var qte_start = preload("res://assets/sounds/qte_start.wav")
 
 var active_qte: QTE
 @export var time_since_coin: float = 0.0
-var coin = preload("res://scenes/coin.gd") 
+var coin = preload("res://scenes/coin.tscn") 
 
 func change_state(s: GameState):
 	state = s
@@ -165,10 +165,8 @@ func _process(delta):
 	
 	if state == GameState.DICE && timer.is_stopped():
 		if time_since_coin > 2.0:
-			print("spawn")
-			add_child(coin.new())
-			
-
+			add_child(coin.instantiate())
+			time_since_coin = 0
 		
 		if dice1.score == win_condition:
 			winner = "Goblin"
