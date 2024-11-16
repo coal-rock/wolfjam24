@@ -62,7 +62,7 @@ func _on_ready() -> void:
 	handle_roll(dice2)
 
 func reset_score(ui: Node2D) -> void:
-	for i in 3:
+	for i in 6:
 		ui.get_node("d" + str(i + 1)).visible = false
 
 func update_score(ui: Node2D, score: int) -> void:
