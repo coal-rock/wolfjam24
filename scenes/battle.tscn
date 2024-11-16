@@ -7,8 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="4_sea53"]
 [ext_resource type="FontFile" uid="uid://fqn8vd3j78ki" path="res://assets/fonts/GothicHijinxRough.ttf" id="5_od18k"]
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="6_dw16j"]
-[ext_resource type="Texture2D" uid="uid://n1701gwqovfx" path="res://assets/Goblin-Sheet.webp" id="7_xuvy5"]
-[ext_resource type="Texture2D" uid="uid://chlrvxvd3auh4" path="res://assets/Hobgoblin-Sheet.webp" id="8_71doo"]
+[ext_resource type="Texture2D" uid="uid://b7m1en30xl4ar" path="res://soft light.png" id="7_3d1g2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
 texture = ExtResource("4_d2mj2")
@@ -366,81 +365,373 @@ texture = ExtResource("4_d2mj2")
 [sub_resource type="TileSet" id="TileSet_5icdq"]
 sources/0 = SubResource("TileSetAtlasSource_ims2e")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31705"]
+texture = ExtResource("4_d2mj2")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+13:18/0 = 0
+14:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+11:19/0 = 0
+12:19/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+8:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+16:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+8:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+16:21/0 = 0
+0:22/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+10:22/0 = 0
+11:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+16:22/0 = 0
+0:23/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+10:23/0 = 0
+11:23/0 = 0
+12:23/0 = 0
+13:23/0 = 0
+14:23/0 = 0
+15:23/0 = 0
+16:23/0 = 0
+0:25/0 = 0
+1:25/0 = 0
+2:25/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+9:25/0 = 0
+0:26/0 = 0
+1:26/0 = 0
+2:26/0 = 0
+3:26/0 = 0
+4:26/0 = 0
+5:26/0 = 0
+6:26/0 = 0
+7:26/0 = 0
+8:26/0 = 0
+9:26/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3ayn5"]
+sources/0 = SubResource("TileSetAtlasSource_31705")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h8e3s"]
+polygon = PackedVector2Array(-8.25001, -7.16666, -8.16667, 7.08334, 6.08333, 7.25, 6, -7.08333)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hy8a0"]
+polygon = PackedVector2Array(-8, -7, -8, 7, 6, 7, 6, -7)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0yp0r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01t2n"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2tm4"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ws6r3"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hlu64"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(512, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhi73"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(768, 0, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_inskx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2tm4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ws6r3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hlu64")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhi73")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_olfod"]
-atlas = ExtResource("8_71doo")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o44wk"]
-atlas = ExtResource("8_71doo")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1qh8"]
-atlas = ExtResource("8_71doo")
-region = Rect2(512, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpppm"]
-atlas = ExtResource("8_71doo")
-region = Rect2(768, 0, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_itcpc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_olfod")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o44wk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x1qh8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jpppm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7h6ta"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
 script = ExtResource("1_xenqr")
@@ -467,17 +758,37 @@ texture_filter = 1
 position = Vector2(512, 64)
 rotation = 1.5708
 scale = Vector2(8, 8)
-tile_map_data = PackedByteArray("AAAEAP7/AAAQABUAAAAEAP//AAAQABYAAAAFAP7/AAAPABUAAAAFAP//AAAPABYAAAAEAPz/AAAQABUAAAAEAP3/AAAQABYAAAAFAPz/AAAPABUAAAAFAP3/AAAPABYAAAACAP//AAAIABYAAAADAP//AAAPABYAAAACAP3/AAAIABYAAAACAP7/AAAIABUAAAADAP3/AAAPABYAAAADAP7/AAAPABUAAAACAPv/AAAIABYAAAACAPz/AAAIABUAAAADAPv/AAAPABYAAAADAPz/AAAPABUAAAAEAPv/AAAQABYAAAAHAP7/AAAFABUAAAAHAP//AAAFABUAAAAHAPz/AAAFABUAAAAHAP3/AAAFABUAAAAHAPr/AAAFABUAAAAHAPv/AAAFABUAAAAGAPz/AAAQABUAAAAGAP3/AAAQABYAAAAGAP7/AAAQABUAAAAGAP//AAAQABYAAAAFAPv/AAAPABYAAAAGAPr/AAAQABUAAAAGAPv/AAAQABYAAAAHAPn/AAAFABUAAAAFAPn/AAAPABUAAAAGAPn/AAAQABUAAAADAPn/AAAPABUAAAAEAPn/AAAQABUAAAADAPr/AAAPABUAAAAEAPr/AAAQABUAAAACAPr/AAAIABUAAAACAPn/AAAIABYAAAACAAAAAAAIABUAAAADAAAAAAAPABUAAAAEAAAAAAAQABUAAAAFAAAAAAAPABUAAAAGAAAAAAAPABUAAAAHAAAAAAAFABUAAAACAPj/AAAIABYAAAADAPj/AAAPABUAAAAEAPj/AAAQABUAAAAFAPj/AAAPABUAAAAGAPj/AAAQABUAAAAHAPj/AAAFABUAAAACAPX/AAAIABQAAAADAPX/AAAJABQAAAAEAPX/AAAKABQAAAAFAPX/AAAJABQAAAAGAPX/AAAKABQAAAAHAPX/AAALABQAAAACAAMAAAAIABcAAAADAAMAAAAJABcAAAAEAAMAAAAKABcAAAAFAAMAAAAJABcAAAAGAAMAAAAKABcAAAAHAAMAAAALABcAAAAFAPr/AAAPABUAAAAGAPf/AAAPABUAAAAGAPb/AAAPABUAAAAFAPb/AAAPABUAAAAEAPb/AAAPABUAAAADAPb/AAAPABUAAAADAPf/AAAPABUAAAAEAPf/AAAPABUAAAAGAAEAAAAPABUAAAAGAAIAAAAPABUAAAAFAAIAAAAPABUAAAAEAAIAAAAPABUAAAAEAAEAAAAPABUAAAADAAEAAAAPABUAAAADAAIAAAAPABUAAAAHAAEAAAAFABUAAAAHAAIAAAAFABUAAAAHAPf/AAAFABUAAAAHAPb/AAAFABUAAAACAAEAAAAIABYAAAACAAIAAAAIABYAAAACAPb/AAAIABYAAAACAPf/AAAIABYAAAA=")
+tile_map_data = PackedByteArray("AAACAAAAAAAIABUAAAACAAEAAAAIABYAAAADAAAAAAAPABUAAAADAAEAAAAPABYAAAACAAIAAAAIABUAAAACAAMAAAAIABcAAAADAAIAAAAPABUAAAADAAMAAAAJABcAAAAEAAIAAAAQABUAAAAEAAMAAAAKABcAAAAFAAIAAAAPABUAAAAFAAMAAAAJABcAAAAEAAAAAAAQABUAAAAEAAEAAAAQABYAAAAFAAAAAAAPABUAAAAFAAEAAAAPABYAAAAEAP7/AAAQABUAAAAEAP//AAAQABYAAAAFAP7/AAAPABUAAAAFAP//AAAPABYAAAAEAPz/AAAQABUAAAAEAP3/AAAQABYAAAAFAPz/AAAPABUAAAAFAP3/AAAPABYAAAACAP//AAAIABYAAAADAP//AAAPABYAAAACAP3/AAAIABYAAAACAP7/AAAIABUAAAADAP3/AAAPABYAAAADAP7/AAAPABUAAAACAPv/AAAIABYAAAACAPz/AAAIABUAAAADAPv/AAAPABYAAAADAPz/AAAPABUAAAAEAPv/AAAQABYAAAAHAAIAAAAFABYAAAAHAAMAAAALABcAAAAGAAIAAAAQABUAAAAGAAMAAAAKABcAAAAHAAAAAAAFABYAAAAHAAEAAAAFABUAAAAGAAAAAAAQABUAAAAGAAEAAAAQABYAAAAHAP7/AAAFABYAAAAHAP//AAAFABUAAAAHAPz/AAAFABYAAAAHAP3/AAAFABUAAAAHAPr/AAAFABYAAAAHAPv/AAAFABUAAAAGAPz/AAAQABUAAAAGAP3/AAAQABYAAAAGAP7/AAAQABUAAAAGAP//AAAQABYAAAAFAPr/AAAPABUAAAAFAPv/AAAPABYAAAAGAPr/AAAQABUAAAAGAPv/AAAQABYAAAAHAPj/AAAFABYAAAAHAPn/AAAFABUAAAAHAPb/AAAFABYAAAAHAPf/AAAFABUAAAAHAPX/AAALABQAAAAFAPX/AAAJABQAAAAGAPX/AAAKABQAAAAFAPb/AAAPABUAAAAFAPf/AAAPABYAAAAGAPb/AAAQABUAAAAGAPf/AAAQABYAAAAFAPj/AAAPABUAAAAFAPn/AAAPABYAAAAGAPj/AAAQABUAAAAGAPn/AAAQABYAAAADAPX/AAAJABQAAAAEAPX/AAAKABQAAAADAPb/AAAPABUAAAADAPf/AAAPABYAAAAEAPb/AAAQABUAAAAEAPf/AAAQABYAAAADAPj/AAAPABUAAAADAPn/AAAPABYAAAAEAPj/AAAQABUAAAAEAPn/AAAQABYAAAADAPr/AAAPABUAAAAEAPr/AAAQABUAAAACAPr/AAAIABUAAAACAPj/AAAIABYAAAACAPn/AAAIABUAAAACAPb/AAAIABYAAAACAPf/AAAIABUAAAACAPX/AAAIABQAAAA=")
 tile_set = SubResource("TileSet_5icdq")
 
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+z_index = -2
+position = Vector2(512, 64)
+rotation = 1.5708
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AAAEAAIAAAAPABUAAFAEAAMAAAAQABUAAFADAAIAAAAPABYAAFADAAMAAAAQABYAAFAGAAIAAAAPABUAAFAGAAMAAAAQABUAAFAFAAIAAAAPABYAAFAFAAMAAAAQABYAAFAIAAIAAAAPABUAAFAIAAMAAAAQABUAAFAHAAIAAAAPABYAAFAHAAMAAAAQABYAAFAIAAAAAAAPABUAAFAIAAEAAAAQABUAAFAHAAAAAAAPABYAAFAHAAEAAAAQABYAAFAIAP7/AAAPABUAAFAIAP//AAAQABUAAFAHAP7/AAAPABYAAFAHAP//AAAQABYAAFAIAPz/AAAPABUAAFAIAP3/AAAQABUAAFAHAPz/AAAPABYAAFAHAP3/AAAQABYAAFAIAPr/AAAPABUAAFAIAPv/AAAQABUAAFAHAPr/AAAPABYAAFAHAPv/AAAQABYAAFAIAPj/AAAPABUAAFAIAPn/AAAQABUAAFAHAPj/AAAPABYAAFAHAPn/AAAQABYAAFAIAPb/AAAPABUAAFAIAPf/AAAQABUAAFAHAPb/AAAPABYAAFAHAPf/AAAQABYAAFAIAPT/AAAPABUAAFAIAPX/AAAQABUAAFAHAPT/AAAPABYAAFAHAPX/AAAQABYAAFAEAAAAAAAPABUAAFAEAAEAAAAQABUAAFADAAAAAAAPABYAAFADAAEAAAAQABYAAFAGAAAAAAAPABUAAFAGAAEAAAAQABUAAFAFAAAAAAAPABYAAFAFAAEAAAAQABYAAFAGAP7/AAAPABUAAFAGAP//AAAQABUAAFAFAP7/AAAPABYAAFAFAP//AAAQABYAAFAGAPz/AAAPABUAAFAGAP3/AAAQABUAAFAFAPz/AAAPABYAAFAFAP3/AAAQABYAAFAGAPr/AAAPABUAAFAGAPv/AAAQABUAAFAFAPr/AAAPABYAAFAFAPv/AAAQABYAAFAGAPj/AAAPABUAAFAGAPn/AAAQABUAAFAFAPj/AAAPABYAAFAFAPn/AAAQABYAAFAGAPb/AAAPABUAAFAGAPf/AAAQABUAAFAFAPb/AAAPABYAAFAFAPf/AAAQABYAAFAGAPT/AAAPABUAAFAGAPX/AAAQABUAAFAFAPT/AAAPABYAAFAFAPX/AAAQABYAAFAEAP7/AAAPABUAAFAEAP//AAAQABUAAFADAP7/AAAPABYAAFADAP//AAAQABYAAFAEAPz/AAAPABUAAFAEAP3/AAAQABUAAFADAPz/AAAPABYAAFADAP3/AAAQABYAAFAEAPr/AAAPABUAAFAEAPv/AAAQABUAAFADAPr/AAAPABYAAFADAPv/AAAQABYAAFAEAPj/AAAPABUAAFAEAPn/AAAQABUAAFADAPj/AAAPABYAAFADAPn/AAAQABYAAFAEAPb/AAAPABUAAFAEAPf/AAAQABUAAFADAPb/AAAPABYAAFADAPf/AAAQABYAAFAEAPT/AAAPABUAAFAEAPX/AAAQABUAAFADAPT/AAAPABYAAFADAPX/AAAQABYAAFAEAAQAAAAPABUAAFAEAAUAAAAQABUAAFADAAQAAAAPABYAAFADAAUAAAAQABYAAFAGAAQAAAAPABUAAFAGAAUAAAAQABUAAFAFAAQAAAAPABYAAFAFAAUAAAAQABYAAFAIAAQAAAAPABUAAFAIAAUAAAAQABUAAFAHAAQAAAAPABYAAFAHAAUAAAAQABYAAFA=")
+tile_set = SubResource("TileSet_3ayn5")
+
 [node name="Player 2" parent="." instance=ExtResource("2_yam4a")]
+z_index = 1
 position = Vector2(1600, 768)
 scale = Vector2(12, 12)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(1600, 768)
+scale = Vector2(12, 12)
+occluder = SubResource("OccluderPolygon2D_h8e3s")
+
 [node name="Player 1" parent="." instance=ExtResource("2_yam4a")]
+z_index = 1
 position = Vector2(320, 768)
 scale = Vector2(12, 12)
 metadata/inputName = "player1Roll"
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(320, 768)
+scale = Vector2(12, 12)
+occluder = SubResource("OccluderPolygon2D_hy8a0")
 
 [node name="Player 1 Score" type="Node2D" parent="."]
 position = Vector2(80, 64)
@@ -702,9 +1013,37 @@ text = "+2"
 position = Vector2(128, 393)
 scale = Vector2(1.38281, 1.38281)
 sprite_frames = SubResource("SpriteFrames_inskx")
+=======
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -3
+offset_right = 1917.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
-[node name="Hobgoblin" type="AnimatedSprite2D" parent="."]
-position = Vector2(1784, 403)
-scale = Vector2(1.38281, 1.38281)
-sprite_frames = SubResource("SpriteFrames_itcpc")
-flip_h = true
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -2
+offset_top = 448.0
+offset_right = 1917.0
+offset_bottom = 1080.0
+color = Color(0.204105, 0.085689, 0, 0.74902)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(606, 510.609)
+scale = Vector2(1.07922, 1.07922)
+energy = 3.74
+range_z_min = 0
+range_z_max = 1
+shadow_enabled = true
+texture = ExtResource("7_3d1g2")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1326, 510.609)
+scale = Vector2(1.07922, 1.07922)
+energy = 3.74
+range_z_min = 0
+range_z_max = 1
+shadow_enabled = true
+texture = ExtResource("7_3d1g2")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_7h6ta")
