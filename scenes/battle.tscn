@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=14 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbbx13uvgw0qu" path="res://assets/wooden_interior.png" id="4_d2mj2"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="4_sea53"]
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="6_dw16j"]
-[ext_resource type="Texture2D" uid="uid://n1701gwqovfx" path="res://assets/Goblin-Sheet.webp" id="7_xuvy5"]
-[ext_resource type="Texture2D" uid="uid://chlrvxvd3auh4" path="res://assets/Hobgoblin-Sheet.webp" id="8_71doo"]
+[ext_resource type="Texture2D" uid="uid://b7m1en30xl4ar" path="res://soft light.png" id="7_3d1g2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
 texture = ExtResource("4_d2mj2")
@@ -365,81 +364,15 @@ texture = ExtResource("4_d2mj2")
 [sub_resource type="TileSet" id="TileSet_5icdq"]
 sources/0 = SubResource("TileSetAtlasSource_ims2e")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h8e3s"]
+polygon = PackedVector2Array(-8.25001, -7.16666, -8.16667, 7.08334, 6.08333, 7.25, 6, -7.08333)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hy8a0"]
+polygon = PackedVector2Array(-8, -7, -8, 7, 6, 7, 6, -7)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0yp0r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01t2n"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2tm4"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ws6r3"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hlu64"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(512, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhi73"]
-atlas = ExtResource("7_xuvy5")
-region = Rect2(768, 0, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_inskx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2tm4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ws6r3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hlu64")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhi73")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_olfod"]
-atlas = ExtResource("8_71doo")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o44wk"]
-atlas = ExtResource("8_71doo")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1qh8"]
-atlas = ExtResource("8_71doo")
-region = Rect2(512, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpppm"]
-atlas = ExtResource("8_71doo")
-region = Rect2(768, 0, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_itcpc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_olfod")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o44wk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x1qh8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jpppm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
 script = ExtResource("1_xenqr")
@@ -466,17 +399,29 @@ texture_filter = 1
 position = Vector2(512, 64)
 rotation = 1.5708
 scale = Vector2(8, 8)
-tile_map_data = PackedByteArray("AAAEAP7/AAAQABUAAAAEAP//AAAQABYAAAAFAP7/AAAPABUAAAAFAP//AAAPABYAAAAEAPz/AAAQABUAAAAEAP3/AAAQABYAAAAFAPz/AAAPABUAAAAFAP3/AAAPABYAAAACAP//AAAIABYAAAADAP//AAAPABYAAAACAP3/AAAIABYAAAACAP7/AAAIABUAAAADAP3/AAAPABYAAAADAP7/AAAPABUAAAACAPv/AAAIABYAAAACAPz/AAAIABUAAAADAPv/AAAPABYAAAADAPz/AAAPABUAAAAEAPv/AAAQABYAAAAHAP7/AAAFABUAAAAHAP//AAAFABUAAAAHAPz/AAAFABUAAAAHAP3/AAAFABUAAAAHAPr/AAAFABUAAAAHAPv/AAAFABUAAAAGAPz/AAAQABUAAAAGAP3/AAAQABYAAAAGAP7/AAAQABUAAAAGAP//AAAQABYAAAAFAPv/AAAPABYAAAAGAPr/AAAQABUAAAAGAPv/AAAQABYAAAAHAPn/AAAFABUAAAAFAPn/AAAPABUAAAAGAPn/AAAQABUAAAADAPn/AAAPABUAAAAEAPn/AAAQABUAAAADAPr/AAAPABUAAAAEAPr/AAAQABUAAAACAPr/AAAIABUAAAACAPn/AAAIABYAAAACAAAAAAAIABUAAAADAAAAAAAPABUAAAAEAAAAAAAQABUAAAAFAAAAAAAPABUAAAAGAAAAAAAPABUAAAAHAAAAAAAFABUAAAACAPj/AAAIABYAAAADAPj/AAAPABUAAAAEAPj/AAAQABUAAAAFAPj/AAAPABUAAAAGAPj/AAAQABUAAAAHAPj/AAAFABUAAAACAPX/AAAIABQAAAADAPX/AAAJABQAAAAEAPX/AAAKABQAAAAFAPX/AAAJABQAAAAGAPX/AAAKABQAAAAHAPX/AAALABQAAAACAAMAAAAIABcAAAADAAMAAAAJABcAAAAEAAMAAAAKABcAAAAFAAMAAAAJABcAAAAGAAMAAAAKABcAAAAHAAMAAAALABcAAAAFAPr/AAAPABUAAAAGAPf/AAAPABUAAAAGAPb/AAAPABUAAAAFAPb/AAAPABUAAAAEAPb/AAAPABUAAAADAPb/AAAPABUAAAADAPf/AAAPABUAAAAEAPf/AAAPABUAAAAGAAEAAAAPABUAAAAGAAIAAAAPABUAAAAFAAIAAAAPABUAAAAEAAIAAAAPABUAAAAEAAEAAAAPABUAAAADAAEAAAAPABUAAAADAAIAAAAPABUAAAAHAAEAAAAFABUAAAAHAAIAAAAFABUAAAAHAPf/AAAFABUAAAAHAPb/AAAFABUAAAACAAEAAAAIABYAAAACAAIAAAAIABYAAAACAPb/AAAIABYAAAACAPf/AAAIABYAAAA=")
+tile_map_data = PackedByteArray("AAACAAAAAAAIABUAAAACAAEAAAAIABYAAAADAAAAAAAPABUAAAADAAEAAAAPABYAAAACAAIAAAAIABUAAAACAAMAAAAIABcAAAADAAIAAAAPABUAAAADAAMAAAAJABcAAAAEAAIAAAAQABUAAAAEAAMAAAAKABcAAAAFAAIAAAAPABUAAAAFAAMAAAAJABcAAAAEAAAAAAAQABUAAAAEAAEAAAAQABYAAAAFAAAAAAAPABUAAAAFAAEAAAAPABYAAAAEAP7/AAAQABUAAAAEAP//AAAQABYAAAAFAP7/AAAPABUAAAAFAP//AAAPABYAAAAEAPz/AAAQABUAAAAEAP3/AAAQABYAAAAFAPz/AAAPABUAAAAFAP3/AAAPABYAAAACAP//AAAIABYAAAADAP//AAAPABYAAAACAP3/AAAIABYAAAACAP7/AAAIABUAAAADAP3/AAAPABYAAAADAP7/AAAPABUAAAACAPv/AAAIABYAAAACAPz/AAAIABUAAAADAPv/AAAPABYAAAADAPz/AAAPABUAAAAEAPv/AAAQABYAAAAHAAIAAAAFABYAAAAHAAMAAAALABcAAAAGAAIAAAAQABUAAAAGAAMAAAAKABcAAAAHAAAAAAAFABYAAAAHAAEAAAAFABUAAAAGAAAAAAAQABUAAAAGAAEAAAAQABYAAAAHAP7/AAAFABYAAAAHAP//AAAFABUAAAAHAPz/AAAFABYAAAAHAP3/AAAFABUAAAAHAPr/AAAFABYAAAAHAPv/AAAFABUAAAAGAPz/AAAQABUAAAAGAP3/AAAQABYAAAAGAP7/AAAQABUAAAAGAP//AAAQABYAAAAFAPr/AAAPABUAAAAFAPv/AAAPABYAAAAGAPr/AAAQABUAAAAGAPv/AAAQABYAAAAHAPj/AAAFABYAAAAHAPn/AAAFABUAAAAHAPb/AAAFABYAAAAHAPf/AAAFABUAAAAHAPX/AAALABQAAAAFAPX/AAAJABQAAAAGAPX/AAAKABQAAAAFAPb/AAAPABUAAAAFAPf/AAAPABYAAAAGAPb/AAAQABUAAAAGAPf/AAAQABYAAAAFAPj/AAAPABUAAAAFAPn/AAAPABYAAAAGAPj/AAAQABUAAAAGAPn/AAAQABYAAAADAPX/AAAJABQAAAAEAPX/AAAKABQAAAADAPb/AAAPABUAAAADAPf/AAAPABYAAAAEAPb/AAAQABUAAAAEAPf/AAAQABYAAAADAPj/AAAPABUAAAADAPn/AAAPABYAAAAEAPj/AAAQABUAAAAEAPn/AAAQABYAAAADAPr/AAAPABUAAAAEAPr/AAAQABUAAAACAPr/AAAIABUAAAACAPj/AAAIABYAAAACAPn/AAAIABUAAAACAPb/AAAIABYAAAACAPf/AAAIABUAAAACAPX/AAAIABQAAAA=")
 tile_set = SubResource("TileSet_5icdq")
 
 [node name="Player 2" parent="." instance=ExtResource("2_yam4a")]
+z_index = 1
 position = Vector2(1600, 768)
 scale = Vector2(12, 12)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(1600, 768)
+scale = Vector2(12, 12)
+occluder = SubResource("OccluderPolygon2D_h8e3s")
+
 [node name="Player 1" parent="." instance=ExtResource("2_yam4a")]
+z_index = 1
 position = Vector2(320, 768)
 scale = Vector2(12, 12)
 metadata/inputName = "player1Roll"
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(320, 768)
+scale = Vector2(12, 12)
+occluder = SubResource("OccluderPolygon2D_hy8a0")
 
 [node name="Player 1 Score" type="Node2D" parent="."]
 position = Vector2(80, 64)
@@ -677,13 +622,26 @@ text = "HOBGOBLIN WINS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Goblin" type="AnimatedSprite2D" parent="."]
-position = Vector2(128, 393)
-scale = Vector2(1.38281, 1.38281)
-sprite_frames = SubResource("SpriteFrames_inskx")
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 1917.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
-[node name="Hobgoblin" type="AnimatedSprite2D" parent="."]
-position = Vector2(1784, 403)
-scale = Vector2(1.38281, 1.38281)
-sprite_frames = SubResource("SpriteFrames_itcpc")
-flip_h = true
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(606, 510.609)
+scale = Vector2(1.07922, 1.07922)
+energy = 3.74
+range_z_min = 0
+range_z_max = 1
+shadow_enabled = true
+texture = ExtResource("7_3d1g2")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1326, 510.609)
+scale = Vector2(1.07922, 1.07922)
+energy = 3.74
+range_z_min = 0
+range_z_max = 1
+shadow_enabled = true
+texture = ExtResource("7_3d1g2")
