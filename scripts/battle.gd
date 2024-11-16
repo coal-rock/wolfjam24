@@ -16,7 +16,7 @@ enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scenes = [preload("res://mash_qte.tscn"), preload("res://irl_qte.tscn")]
+var qte_scenes = [preload("res://mash_qte.tscn")]
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
@@ -30,6 +30,9 @@ func handle_roll(r: DiceRoller) -> void:
 	
 # who rolled a 6
 var roller: DiceRoller
+
+# true if the qte is a battle event (when 6 is rolled)
+var qte_is_battle = false
 	
 func roll_finished(r: DiceRoller, roll:int):
 	if dice1.is_rolled && dice2.is_rolled:
@@ -37,30 +40,42 @@ func roll_finished(r: DiceRoller, roll:int):
 		dice1.is_rolled = false
 		dice2.is_rolled = false
 		
-		# now if both have a roll, start the battle	
-		#if dice1.spr.frame == dice2.spr.frame:
-		#
+		# if both are the same do qte
+		if dice1.spr.frame == dice2.spr.frame:
+			qte_is_battle = false
+			start_qte(qte_scenes[randi() % len(qte_scenes)])
+		
 	if roll == 6:
 		roller = r
-		change_state(GameState.QTE)
-		$BattleText.visible = true
-		await get_tree().create_timer(2).timeout
-		$BattleText.visible = false
-		active_qte = qte_scenes[randi() % len(qte_scenes)].instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
-		active_qte.battle = self
-		get_tree().get_root().add_child(active_qte)
-	
+		qte_is_battle = true
+		start_qte(preload("res://irl_qte.tscn"))
+
+func start_qte(scene):
+	change_state(GameState.QTE)
+	$BattleText.visible = true
+	await get_tree().create_timer(2).timeout
+	$BattleText.visible = false
+	active_qte = scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+	active_qte.battle = self
+	get_tree().get_root().add_child(active_qte)
 	
 # called by the qte script
 func qte_finished(whoWon: DiceRoller):
 	active_qte.queue_free()
 	change_state(GameState.DICE)
 	print("dice %s won" % whoWon)
-	if whoWon == roller:
-		roller.score +=1
-	
+	if qte_is_battle:
+		print("what")
+		print(whoWon, roller)
+		if whoWon == roller:
+			roller.score += 1
+	else:
+		if whoWon == dice1:
+			dice2.score -=1
+		else:
+			dice1.score -=1
 
-func _on_ready() -> void:	
+func _on_ready() -> void:
 	handle_roll(dice1)
 	handle_roll(dice2)
 
