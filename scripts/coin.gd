@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 	self.global_position += Vector2(0.0, 300 * delta * (elapsed_time * 2))
 	
 	if self.global_position.y > 1200:
+		self.get_parent().coin_present = false
 		self.queue_free()

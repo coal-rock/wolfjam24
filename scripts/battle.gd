@@ -36,9 +36,17 @@ var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tsc
 var battle_start = preload("res://assets/sounds/battle_start.wav")
 var qte_start = preload("res://assets/sounds/qte_start.wav")
 
+var coin_spawn = preload("res://assets/sounds/coin_spawn.wav")
+var coin_collect = preload("res://assets/sounds/coin_collect.wav")
+
 var active_qte: QTE
 @export var time_since_coin: float = 0.0
+
 var coin = preload("res://scenes/coin.tscn") 
+var coin_instance
+
+@export var coin_present = false
+
 
 func change_state(s: GameState):
 	state = s
@@ -164,8 +172,12 @@ func _process(delta):
 		time_since_coin += delta
 	
 	if state == GameState.DICE && timer.is_stopped():
-		if time_since_coin > 2.0:
-			add_child(coin.instantiate())
+		if time_since_coin > 2 && coin_present == false:
+			$AudioStreamPlayer2D.stream = coin_spawn
+			$AudioStreamPlayer2D.play()
+			coin_instance = coin.instantiate()
+			add_child(coin_instance)
+			coin_present = true
 			time_since_coin = 0
 		
 		if dice1.score == win_condition:
@@ -180,6 +192,22 @@ func _process(delta):
 		if Input.is_action_just_pressed(inputName2) && !dice2.is_rolled:
 			handle_roll(dice2)
 			
+		if coin_present:
+			if Input.is_action_just_pressed("player1CollectCoin"):
+				dice1.coins += 1
+				coin_instance.queue_free()
+				coin_present = false
+				$AudioStreamPlayer2D.stream = coin_collect
+				$AudioStreamPlayer2D.play()
+				
+			
+			if Input.is_action_just_pressed("player2CollectCoin"):
+				dice2.coins += 1
+				coin_instance.queue_free()
+				coin_present = false
+				$AudioStreamPlayer2D.stream = coin_collect
+				$AudioStreamPlayer2D.play()
+				
 		update_score(score1, dice1.score)
 		update_score(score2, dice2.score)
 	
