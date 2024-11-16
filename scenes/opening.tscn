@@ -1,12 +1,20 @@
 [gd_scene load_steps=7 format=3 uid="uid://dd3is6xqgkxut"]
 
 [ext_resource type="Script" path="res://scripts/opening.gd" id="1_c2qie"]
-[ext_resource type="Script" path="res://scripts/opening_label.gd" id="2_b6ji0"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="2_kp08l"]
+
+[sub_resource type="GDScript" id="GDScript_2bm3a"]
+script/source = "extends Label
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="Animation" id="Animation_d2mth"]
 resource_name = "FadeIn"
-length = 12.0
+length = 16.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,6 +62,20 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(15.9667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_fade_in_complete"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_jre82"]
@@ -137,7 +159,7 @@ theme_override_fonts/font = ExtResource("2_kp08l")
 theme_override_font_sizes/font_size = 40
 text = "The Goblin and the Hobgoblin tribes have fought bloody wars for hundreds of generations."
 horizontal_alignment = 1
-script = ExtResource("2_b6ji0")
+script = SubResource("GDScript_2bm3a")
 
 [node name="SecondSentenceLabel" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -155,7 +177,7 @@ theme_override_font_sizes/font_size = 40
 text = "However, recently, instead of gruesome and taxing battles, the two groups have decided to settle
  disagreements not with warfare, but with dice."
 horizontal_alignment = 1
-script = ExtResource("2_b6ji0")
+script = SubResource("GDScript_2bm3a")
 
 [node name="ThirdSentenceLabel" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -172,7 +194,7 @@ theme_override_fonts/font = ExtResource("2_kp08l")
 theme_override_font_sizes/font_size = 40
 text = "Goblin Dice has been in practice for thousands of…minutes now and tensions have stayed cool."
 horizontal_alignment = 1
-script = ExtResource("2_b6ji0")
+script = SubResource("GDScript_2bm3a")
 
 [node name="FourthSentenceLabel" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -192,7 +214,7 @@ theme_override_fonts/font = ExtResource("2_kp08l")
 theme_override_font_sizes/font_size = 50
 text = "Will this non-aggression pact stand tall?"
 horizontal_alignment = 1
-script = ExtResource("2_b6ji0")
+script = SubResource("GDScript_2bm3a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
