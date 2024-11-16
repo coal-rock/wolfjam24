@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		mylabel.text = "pressed!"
 		score += 1
 		if score > 2:
-			battle.qte_finished()
+			battle.qte_finished(battle.dice1)
 		byp = 1
 		await get_tree().create_timer(1).timeout
 		byp = 0

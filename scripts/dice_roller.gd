@@ -37,3 +37,4 @@ func animation_looped() -> void:
 		spr.visible = true
 		anim_spr.visible = false
 		anim_count = 0
+		get_parent().roll_finished(self)

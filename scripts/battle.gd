@@ -16,7 +16,7 @@ enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scene = preload("res://irl_qte.tscn")
+var qte_scene = preload("res://mash_qte.tscn")
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
@@ -28,13 +28,15 @@ func change_state(s: GameState):
 func handle_roll(r: DiceRoller) -> void:
 	r.update_die()
 	
+func roll_finished(r: DiceRoller):
 	if dice1.is_rolled && dice2.is_rolled:
 		print("BOTH ROLL")
 		dice1.is_rolled = false
 		dice2.is_rolled = false
 		
 		# now if both have a roll, start the battle	
-		if dice1.spr.frame == dice2.spr.frame:
+		#if dice1.spr.frame == dice2.spr.frame:
+		if true:
 			change_state(GameState.QTE)
 			$BattleText.visible = true
 			await get_tree().create_timer(2).timeout
