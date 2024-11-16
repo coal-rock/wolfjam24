@@ -396,14 +396,6 @@ offset_bottom = 219.0
 theme_override_font_sizes/font_size = 160
 text = "Goblin Dice"
 
-[node name="BattleText" type="Label" parent="."]
-visible = false
-offset_left = 418.0
-offset_right = 1122.0
-offset_bottom = 175.0
-theme_override_font_sizes/font_size = 128
-text = "Battle!!"
-
 [node name="Player 1 Score" type="Node2D" parent="."]
 position = Vector2(80, 64)
 scale = Vector2(6, 6)
@@ -500,3 +492,11 @@ modulate = Color(0, 0, 0, 0.74902)
 position = Vector2(969.25, 539.25)
 scale = Vector2(1939.5, 1079.5)
 texture = SubResource("PlaceholderTexture2D_0yp0r")
+
+[node name="BattleText" type="Label" parent="."]
+visible = false
+offset_left = 418.0
+offset_right = 1122.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 128
+text = "Battle!!"
