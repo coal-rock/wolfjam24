@@ -50,7 +50,6 @@ func animation_looped() -> void:
 		is_rolled = true
 		
 		if roll == 6:
-			score += 1
 			$AudioStreamPlayer2D.stream = best_num_sound
 			$AudioStreamPlayer2D.play()
 		else:
@@ -62,4 +61,4 @@ func animation_looped() -> void:
 		spr.visible = true
 		anim_spr.visible = false
 		anim_count = 0
-		get_parent().roll_finished(self)
+		get_parent().roll_finished(self, roll)

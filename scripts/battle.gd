@@ -28,23 +28,27 @@ func change_state(s: GameState):
 func handle_roll(r: DiceRoller) -> void:
 	r.update_die()
 	
-func roll_finished(r: DiceRoller):
+# who rolled a 6
+var roller: DiceRoller
+	
+func roll_finished(r: DiceRoller, roll:int):
 	if dice1.is_rolled && dice2.is_rolled:
 		print("BOTH ROLL")
 		dice1.is_rolled = false
 		dice2.is_rolled = false
 		
 		# now if both have a roll, start the battle	
-		if dice1.spr.frame == dice2.spr.frame:
-			change_state(GameState.QTE)
-			$BattleText.visible = true
-			await get_tree().create_timer(2).timeout
-			$BattleText.visible = false
-			print("BOTH MATCH")
-			active_qte = qte_scenes[randi() % len(qte_scenes)].instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
-			active_qte.battle = self
-			get_tree().get_root().add_child(active_qte)
-
+		#if dice1.spr.frame == dice2.spr.frame:
+		#
+	if roll == 6:
+		roller = r
+		change_state(GameState.QTE)
+		$BattleText.visible = true
+		await get_tree().create_timer(2).timeout
+		$BattleText.visible = false
+		active_qte = qte_scenes[randi() % len(qte_scenes)].instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+		active_qte.battle = self
+		get_tree().get_root().add_child(active_qte)
 	
 	
 # called by the qte script
@@ -52,10 +56,8 @@ func qte_finished(whoWon: DiceRoller):
 	active_qte.queue_free()
 	change_state(GameState.DICE)
 	print("dice %s won" % whoWon)
-	if whoWon == dice1:
-		dice2.score -=1
-	else:
-		dice1.score -=1
+	if whoWon == roller:
+		roller.score +=1
 	
 
 func _on_ready() -> void:	
