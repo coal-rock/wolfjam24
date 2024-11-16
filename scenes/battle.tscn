@@ -30,7 +30,15 @@ text = "Goblin Dice"
 
 [node name="Vignete" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0, 0, 0, 0.415686)
+modulate = Color(0, 0, 0, 0.74902)
 position = Vector2(572.25, 310.25)
 scale = Vector2(1145.5, 621.5)
 texture = SubResource("PlaceholderTexture2D_0yp0r")
+
+[node name="BattleText" type="Label" parent="."]
+visible = false
+offset_left = 418.0
+offset_right = 1122.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 128
+text = "Battle!!"

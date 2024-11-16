@@ -33,6 +33,9 @@ func handle_roll(r: DiceRoller) -> void:
 		# now if both have a roll, start the battle	
 		if dice1.spr.frame == dice2.spr.frame:
 			change_state(GameState.QTE)
+			$BattleText.visible = true
+			await get_tree().create_timer(2).timeout
+			$BattleText.visible = false
 			print("BOTH MATCH")
 			active_qte = qte_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 			active_qte.battle = self
