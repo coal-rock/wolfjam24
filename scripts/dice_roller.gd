@@ -6,6 +6,7 @@ class_name DiceRoller
 @onready var anim_spr = $AnimatedSprite2D
 @export var sides: int = 6;
 @export var score: int = 0;
+@export var last_roll: int = 0;
 var dice_roll_sound = preload("res://assets/sounds/dice_roll.wav")
 
 var bad_num_sound
@@ -61,4 +62,5 @@ func animation_looped() -> void:
 		spr.visible = true
 		anim_spr.visible = false
 		anim_count = 0
+		last_roll = roll
 		get_parent().roll_finished(self, roll)

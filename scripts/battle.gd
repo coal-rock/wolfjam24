@@ -23,9 +23,14 @@ class_name Battle
 @onready var vignete = $Vignete 
 @onready var timer = $Timer
 
-enum GameState { DICE, QTE, MENU }
+@onready var win_vignette = $WinVignette
+@onready var win_text = $WinText
+
+enum GameState { DICE, QTE, MENU, WIN }
 
 @export var state = GameState.DICE
+@export var win_condition: int = 6
+@export var winner: String = ""
 
 var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tscn"), preload("res://goomba_qte.tscn")]
 var battle_start = preload("res://assets/sounds/battle_start.wav")
@@ -59,7 +64,7 @@ func roll_finished(r: DiceRoller, roll:int):
 		timer.one_shot = true 
 		timer.start()
 		
-		if dice1.spr.frame == 5 && dice2.spr.frame == 5:
+		if dice1.last_roll == 6 && dice2.last_roll == 6:
 			print("implement")
 			return
 		
@@ -117,7 +122,7 @@ func _on_ready() -> void:
 	handle_roll(dice2)
 
 func reset_score(ui: Node2D) -> void:
-	for i in 6:
+	for i in win_condition:
 		ui.get_node("d" + str(i + 1)).visible = false
 
 func update_score(ui: Node2D, score: int) -> void:
@@ -128,6 +133,13 @@ func update_score(ui: Node2D, score: int) -> void:
 
 func _process(delta):
 	if state == GameState.DICE && timer.is_stopped():
+		if dice1.score == win_condition:
+			winner = "Goblin"
+			change_state(GameState.WIN)
+		elif dice2.score == win_condition:
+			winner = "Hobgoblin"
+			change_state(GameState.WIN)
+				
 		if Input.is_action_just_pressed(inputName1) && !dice1.is_rolled:
 			handle_roll(dice1)
 		if Input.is_action_just_pressed(inputName2) && !dice2.is_rolled:
@@ -136,4 +148,7 @@ func _process(delta):
 		update_score(score1, dice1.score)
 		update_score(score2, dice2.score)
 	
-	
+	if state == GameState.WIN:
+		win_vignette.visible = true
+		win_text.text = winner + " wins!"
+		win_text.visible = true

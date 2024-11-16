@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=9 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
@@ -363,6 +363,8 @@ sources/0 = SubResource("TileSetAtlasSource_ims2e")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0yp0r"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01t2n"]
+
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "dice1", "dice2")]
 script = ExtResource("1_xenqr")
 score1 = NodePath("Player 1 Score")
@@ -512,3 +514,18 @@ text = "Battle!!"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="WinVignette" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+scale = Vector2(1920, 1080)
+texture = SubResource("PlaceholderTexture2D_01t2n")
+
+[node name="WinText" type="Label" parent="."]
+visible = false
+offset_left = 51.0
+offset_top = 207.0
+offset_right = 1820.0
+offset_bottom = 556.0
+theme_override_font_sizes/font_size = 200
+text = "HOBGOBLIN WINS"
