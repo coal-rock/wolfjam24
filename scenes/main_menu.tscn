@@ -1,9 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://2svwgugjltj0"]
+[gd_scene load_steps=9 format=3 uid="uid://2svwgugjltj0"]
 
+[ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_1kq5q"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="1_bvo35"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw5ws"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0flm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbtgm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36fcm"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 3
+shadow_offset = Vector2(2, -2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx5rn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rq0ky"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to4wj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,71 +32,72 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -121.0
-offset_right = 121.0
-offset_bottom = 113.0
-grow_horizontal = 2
-pivot_offset = Vector2(121, 56.5)
-theme_override_fonts/font = ExtResource("1_bvo35")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_yw5ws")
-text = "Play"
-
-[node name="SettingsButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -179.0
-offset_top = 179.683
-offset_right = 179.0
-offset_bottom = 292.683
-grow_horizontal = 2
-pivot_offset = Vector2(121, 56.5)
-theme_override_fonts/font = ExtResource("1_bvo35")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_yw5ws")
-text = "Settings
-"
-
-[node name="CreditsButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -121.0
-offset_top = 43.813
-offset_right = 121.0
-offset_bottom = 156.813
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(121, 56.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_q0flm")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -700.0
+offset_top = 23.0
+offset_right = 700.0
+offset_bottom = 437.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_1kq5q")
+theme_override_font_sizes/font_size = 300
+text = "Goblin Dice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.533
+anchor_top = 0.5
+anchor_right = 0.537
+anchor_bottom = 0.5
+offset_left = -242.36
+offset_top = -14.0
+offset_right = 107.96
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_yw5ws")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bvo35")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_fx5rn")
+text = "Setting"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bvo35")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_rq0ky")
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -121.0
-offset_top = -113.0
-offset_right = 121.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(121, 56.5)
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_yw5ws")
+theme_override_styles/normal = SubResource("StyleBoxFlat_to4wj")
 text = "Exit"
