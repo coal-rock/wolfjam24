@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1x45nirwtnom"]
 
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/DiceRoller.tscn" id="1_btlj0"]
-[ext_resource type="Script" path="res://scenes/battledice.gd" id="1_lxlda"]
+[ext_resource type="Script" path="res://scenes/Battle.gd" id="1_lxlda"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("dice1", "dice2")]
 script = ExtResource("1_lxlda")
