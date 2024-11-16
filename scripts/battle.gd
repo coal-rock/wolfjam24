@@ -200,7 +200,7 @@ func _process(delta):
 		time_since_coin += delta
 	
 	if state == GameState.DICE && timer.is_stopped():
-		if time_since_coin > 2 && coin_present == false:
+		if time_since_coin > 20 && coin_present == false:
 			$AudioStreamPlayer2D.stream = coin_spawn
 			$AudioStreamPlayer2D.play()
 			coin_instance = coin.instantiate()
