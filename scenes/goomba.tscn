@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://daec3aq4ys1vl"]
 
+[ext_resource type="Texture2D" uid="uid://bmd1yp2uhvdd2" path="res://assets/MEAT.png" id="1_r2sy5"]
 [ext_resource type="Script" path="res://scenes/goomba.gd" id="1_w0ehe"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s705p"]
-
 [node name="Goomba" type="Sprite2D"]
-scale = Vector2(40, 40)
-texture = SubResource("PlaceholderTexture2D_s705p")
+position = Vector2(86, 72)
+scale = Vector2(3.625, 3.625)
+texture = ExtResource("1_r2sy5")
 script = ExtResource("1_w0ehe")
