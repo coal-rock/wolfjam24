@@ -7,6 +7,7 @@ class_name DiceRoller
 @export var sides: int = 6;
 @export var score: int = 1;
 @export var last_roll: int = 0;
+@export var coins: int = 0;
 
 var dice_roll_sound = preload("res://assets/sounds/dice_roll.wav")
 
