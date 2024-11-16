@@ -7,7 +7,6 @@ class_name DiceRoller
 
 func _ready() -> void:
 	spr = $Sprite2D
-	print(spr)
 	
 func roll() -> int:
 	return randi() % sides + 1

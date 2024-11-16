@@ -1,9 +1,13 @@
-extends Node2D
-
+extends QTE
+class_name RhythmQTE
 
 var inputs = [KEY_W, KEY_A, KEY_S, KEY_D]
 var selectedinput = -1
 var timeleft = -1
+
+var score = 0
+
+@export var battle: Battle
 
 @onready
 var mylabel = get_node("Node2D/Label")
@@ -24,6 +28,9 @@ func _process(delta: float) -> void:
 	mylabel.text = "PRESS %s (%s)" % [ OS.get_keycode_string(selectedinput),timeleft]
 	if Input.is_key_pressed(selectedinput):
 		mylabel.text = "pressed!"
+		score += 1
+		if score > 2:
+			battle.qte_finished()
 		byp = 1
 		await get_tree().create_timer(1).timeout
 		byp = 0
