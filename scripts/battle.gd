@@ -209,7 +209,7 @@ func _process(delta):
 			
 		if coin_present:
 			if Input.is_action_just_pressed("player1CollectCoin"):
-				dice1.coins += 1
+				dice1.coins = min(4, dice1.coins + 1)
 				coin_instance.queue_free()
 				coin_present = false
 				$AudioStreamPlayer2D.stream = coin_collect
@@ -217,7 +217,7 @@ func _process(delta):
 				
 			
 			if Input.is_action_just_pressed("player2CollectCoin"):
-				dice2.coins += 1
+				dice2.coins = min(4, dice2.coins + 1)
 				coin_instance.queue_free()
 				coin_present = false
 				$AudioStreamPlayer2D.stream = coin_collect
