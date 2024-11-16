@@ -1,18 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1x45nirwtnom"]
+[gd_scene load_steps=3 format=3 uid="uid://d1x45nirwtnom"]
 
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/DiceRoller.tscn" id="1_btlj0"]
+[ext_resource type="Script" path="res://scenes/battledice.gd" id="1_lxlda"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("dice1", "dice2")]
+script = ExtResource("1_lxlda")
+dice1 = NodePath("Player 1")
+dice2 = NodePath("Player 2")
+inputName1 = "player1Roll"
+inputName2 = "player2Roll"
 
 [node name="Player 2" parent="." instance=ExtResource("1_btlj0")]
 position = Vector2(1020, 491)
 scale = Vector2(8, 8)
-inputName = "player2Roll"
 
 [node name="Player 1" parent="." instance=ExtResource("1_btlj0")]
 position = Vector2(147, 500)
 scale = Vector2(8, 8)
-inputName = "player1Roll"
 metadata/inputName = "player1Roll"
 
 [node name="Label" type="Label" parent="."]
