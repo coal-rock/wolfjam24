@@ -28,7 +28,7 @@ enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scenes = [preload("res://node_2d_qte.tscn")]
+var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tscn"), preload("res://goomba_qte.tscn")]
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s

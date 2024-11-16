@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://byc0nos6o0ki5"]
+
+[ext_resource type="Script" path="res://GoombaQTE.gd" id="1_vcguo"]
+
+[node name="GoomaQte" type="Node2D"]
+script = ExtResource("1_vcguo")
+
+[node name="counter1" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 414.0
+offset_right = 556.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 59
+text = "0 clicks"
+
+[node name="counter2" type="Label" parent="."]
+offset_left = 1322.0
+offset_top = 366.0
+offset_right = 1786.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 59
+text = "0 clicks"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 578.0
+offset_top = 36.0
+offset_right = 1153.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 59
+text = "count the gold coins!"
