@@ -72,14 +72,20 @@ func roll_finished(r: DiceRoller, roll:int):
 			await get_tree().create_timer(1.0).timeout
 			start_qte(qte_scenes[randi() % len(qte_scenes)])
 		
-		if roll == 6:
-			roller = r
-			qte_is_battle = true
-			await get_tree().create_timer(0.5).timeout
-			$AudioStreamPlayer2D.stream = battle_start
-			$AudioStreamPlayer2D.play()
-			await get_tree().create_timer(1.0).timeout
-			start_qte(preload("res://irl_qte.tscn"))
+		if dice1.spr.frame == 5:
+			roller = dice1
+			start_battle()
+		if dice2.spr.frame == 5:
+			roller = dice2
+			start_battle()
+		
+func start_battle():
+	qte_is_battle = true
+	await get_tree().create_timer(0.5).timeout
+	$AudioStreamPlayer2D.stream = battle_start
+	$AudioStreamPlayer2D.play()
+	await get_tree().create_timer(1.0).timeout
+	start_qte(preload("res://irl_qte.tscn"))
 
 func start_qte(scene):
 	change_state(GameState.QTE)
