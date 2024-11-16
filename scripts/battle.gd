@@ -37,6 +37,9 @@ var battle_start = preload("res://assets/sounds/battle_start.wav")
 var qte_start = preload("res://assets/sounds/qte_start.wav")
 
 var active_qte: QTE
+@export var time_since_coin: float = 0.0
+var coin = preload("res://scenes/coin.gd") 
+
 func change_state(s: GameState):
 	state = s
 	if state == GameState.QTE:
@@ -149,7 +152,16 @@ func update_score(ui: Node2D, score: int) -> void:
 		ui.get_node("d" + str(i + 1)).visible = true
 
 func _process(delta):
+	if state == GameState.DICE:
+		time_since_coin += delta
+	
 	if state == GameState.DICE && timer.is_stopped():
+		if time_since_coin > 2.0:
+			print("spawn")
+			add_child(coin.new())
+			
+
+		
 		if dice1.score == win_condition:
 			winner = "Goblin"
 			change_state(GameState.WIN)
