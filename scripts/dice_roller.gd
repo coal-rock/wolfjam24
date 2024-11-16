@@ -8,6 +8,7 @@ class_name DiceRoller
 @export var score: int = 1;
 @export var last_roll: int = 0;
 @export var coins: int = 0;
+@export var bonus: int = 0;
 
 var dice_roll_sound = preload("res://assets/sounds/dice_roll.wav")
 
@@ -33,12 +34,18 @@ func _ready() -> void:
 	
 func roll() -> int:
 #	weight dice after two boring roll
+	var roll
+
 	if event_counter >= 2:
-		var rand = (randi() % (sides / 2) + 1) * 2 
-		print("weight: ", rand)
-		return rand
+		roll = (randi() % (sides / 2) + 1) * 2 
+	else:
+		roll = randi() % sides + 1
+		
+	roll = min(6, roll + bonus)
+	bonus = 0
 	
-	return randi() % sides + 1
+	return roll
+		
 
 func update_die() -> void:
 	spr.visible = false

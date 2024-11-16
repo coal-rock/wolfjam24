@@ -29,6 +29,9 @@ class_name Battle
 @onready var win_vignette = $WinVignette
 @onready var win_text = $WinText
 
+@onready var bonus1 = $Player1Bonus
+@onready var bonus2 = $Player2Bonus
+
 enum GameState { DICE, QTE, MENU, WIN }
 
 @export var state = GameState.DICE
@@ -182,6 +185,16 @@ func update_coins(coin_ui: Node2D, coin_count: int) -> void:
 	for i in coin_count:
 		coin_ui.get_node("c" + str(i + 1)).visible = true
 
+func reset_bonus(bonus: Label) -> void:
+	bonus.visible = false
+	
+func update_bonus(bonus: Label, bonus_amount: int) -> void:
+	reset_bonus(bonus)
+	
+	if bonus_amount > 0:
+		bonus.text = "+" + str(bonus_amount)
+		bonus.visible = true
+
 func _process(delta):
 	if state == GameState.DICE:
 		time_since_coin += delta
@@ -222,11 +235,22 @@ func _process(delta):
 				coin_present = false
 				$AudioStreamPlayer2D.stream = coin_collect
 				$AudioStreamPlayer2D.play()
+		else:
+			if Input.is_action_just_pressed("player1CollectCoin") && dice1.coins > 0:
+				dice1.coins -= 1
+				dice1.bonus += 1
+				
+			if Input.is_action_just_pressed("player2CollectCoin") && dice2.coins > 0:
+				dice2.coins -= 1
+				dice2.bonus += 1
 				
 		update_score(score1, dice1.score)
 		update_score(score2, dice2.score)
 		update_coins(coin1, dice1.coins)
 		update_coins(coin2, dice2.coins)
+		update_bonus(bonus1, dice1.bonus)
+		update_bonus(bonus2, dice2.bonus)
+		
 	if state == GameState.WIN:
 		win_vignette.visible = true
 		win_text.text = winner + " wins!"

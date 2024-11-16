@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=12 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
 [ext_resource type="Texture2D" uid="uid://dv2b40ep0bjq4" path="res://assets/dice/d6.png" id="3_ovybg"]
 [ext_resource type="Texture2D" uid="uid://dbbx13uvgw0qu" path="res://assets/wooden_interior.png" id="4_d2mj2"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="4_sea53"]
+[ext_resource type="FontFile" uid="uid://fqn8vd3j78ki" path="res://assets/fonts/GothicHijinxRough.ttf" id="5_od18k"]
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="6_dw16j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
@@ -602,3 +603,23 @@ theme_override_font_sizes/font_size = 150
 text = "HOBGOBLIN WINS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Player1Bonus" type="Label" parent="."]
+visible = false
+offset_left = 256.0
+offset_top = 556.0
+offset_right = 337.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("5_od18k")
+theme_override_font_sizes/font_size = 96
+text = "+2"
+
+[node name="Player2Bonus" type="Label" parent="."]
+visible = false
+offset_left = 1536.0
+offset_top = 556.0
+offset_right = 1617.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("5_od18k")
+theme_override_font_sizes/font_size = 96
+text = "+2"
