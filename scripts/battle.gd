@@ -60,17 +60,21 @@ func roll_finished(r: DiceRoller, roll:int):
 		print("BOTH ROLL")
 		dice1.is_rolled = false
 		dice2.is_rolled = false
-		timer.wait_time = 1.0
+		timer.wait_time = 0.5
 		timer.one_shot = true 
 		timer.start()
 		
 		if dice1.last_roll == 6 && dice2.last_roll == 6:
 			print("implement")
+			dice1.event_counter = 0
+			dice2.event_counter = 0
 			return
 		
 		# if both are the same do qte
 		if dice1.spr.frame == dice2.spr.frame && dice1.score > 0 && dice2.score > 0:
 			qte_is_battle = false
+			dice1.event_counter = 0
+			dice2.event_counter = 0
 			await get_tree().create_timer(0.5).timeout
 			$AudioStreamPlayer2D.stream = qte_start
 			$AudioStreamPlayer2D.play()
@@ -79,12 +83,19 @@ func roll_finished(r: DiceRoller, roll:int):
 		
 		if dice1.spr.frame == 5:
 			roller = dice1
+			roller.event_counter = 0
 			start_battle()
 		if dice2.spr.frame == 5:
 			roller = dice2
+			roller.event_counter = 0
 			start_battle()
 		
 func start_battle():
+#	prevent input
+	timer.wait_time = 2
+	timer.one_shot = true 
+	timer.start()
+	
 	qte_is_battle = true
 	await get_tree().create_timer(0.5).timeout
 	$AudioStreamPlayer2D.stream = battle_start
@@ -93,6 +104,12 @@ func start_battle():
 	start_qte(preload("res://irl_qte.tscn"))
 
 func start_qte(scene):
+#	prevent input
+	timer.wait_time = 2
+	timer.one_shot = true 
+	timer.start()
+	
+	
 	change_state(GameState.QTE)
 	$BattleText.visible = true
 	await get_tree().create_timer(2).timeout
@@ -113,9 +130,11 @@ func qte_finished(whoWon: DiceRoller):
 			roller.score += 1
 	else:
 		if whoWon == dice1:
-			dice2.score -=1
+			dice2.score -= 1
+			dice1.score += 1
 		else:
-			dice1.score -=1
+			dice1.score -= 1
+			dice2.score += 1
 
 func _on_ready() -> void:
 	handle_roll(dice1)
