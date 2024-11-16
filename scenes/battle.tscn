@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1x45nirwtnom"]
+[gd_scene load_steps=4 format=3 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
