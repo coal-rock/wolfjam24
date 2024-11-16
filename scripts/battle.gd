@@ -124,8 +124,6 @@ func qte_finished(whoWon: DiceRoller):
 	change_state(GameState.DICE)
 	print("dice %s won" % whoWon)
 	if qte_is_battle:
-		print("what")
-		print(whoWon, roller)
 		if whoWon == roller:
 			roller.score += 1
 	else:
