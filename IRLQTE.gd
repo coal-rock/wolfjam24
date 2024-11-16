@@ -3,6 +3,7 @@ extends QTE
 var irlgames = ["Thumb War!!", "Rock Paper Scissors!!"]
 
 var allowinp = false
+
 func _ready() -> void:
 	$Label.text = irlgames[randi() % len(irlgames)]
 	await get_tree().create_timer(3).timeout

@@ -16,7 +16,7 @@ enum GameState { DICE, QTE, MENU }
 
 @export var state = GameState.DICE
 
-var qte_scene = preload("res://irl_qte.tscn")
+var qte_scene = preload("res://mash_qte.tscn")
 var active_qte: QTE
 func change_state(s: GameState):
 	state = s
@@ -28,6 +28,7 @@ func change_state(s: GameState):
 func handle_roll(r: DiceRoller) -> void:
 	r.update_die()
 	
+func roll_finished(r: DiceRoller):
 	if dice1.is_rolled && dice2.is_rolled:
 		print("BOTH ROLL")
 		dice1.is_rolled = false
