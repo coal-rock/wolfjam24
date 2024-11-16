@@ -35,8 +35,7 @@ func roll_finished(r: DiceRoller):
 		dice2.is_rolled = false
 		
 		# now if both have a roll, start the battle	
-		#if dice1.spr.frame == dice2.spr.frame:
-		if true:
+		if dice1.spr.frame == dice2.spr.frame:
 			change_state(GameState.QTE)
 			$BattleText.visible = true
 			await get_tree().create_timer(2).timeout
