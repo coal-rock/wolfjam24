@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://2svwgugjltj0"]
+[gd_scene load_steps=22 format=3 uid="uid://2svwgugjltj0"]
 
 [ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_1kq5q"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="1_bvo35"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://u4c7no06lomu" path="res://assets/Tavern-Sheet.png" id="2_prbf2"]
 [ext_resource type="Texture2D" uid="uid://ue6c76vudi03" path="res://assets/racecar.webp" id="4_j5p0v"]
 [ext_resource type="Texture2D" uid="uid://cajr2neufdaqa" path="res://assets/wolfjam.webp" id="5_jrvcn"]
+[ext_resource type="AudioStream" uid="uid://cmq2awi354oxb" path="res://assets/sounds/Menu Music.wav" id="7_nqdsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmosh"]
 atlas = ExtResource("2_prbf2")
@@ -32,11 +33,7 @@ animations = [{
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ovnu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nomym"]
-bg_color = Color(0.389287, 0.389287, 0.389287, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36fcm"]
-bg_color = Color(0.513233, 0.513233, 0.513233, 1)
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(0.396889, 0.396889, 0.396889, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -45,7 +42,47 @@ shadow_color = Color(1, 1, 1, 1)
 shadow_size = 3
 shadow_offset = Vector2(2, -2)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbtgm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f011c"]
+bg_color = Color(0.157336, 0.369262, 0.155886, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_offset = Vector2(2, -2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36fcm"]
+bg_color = Color(0.2484, 0.2484, 0.2484, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vyl3"]
+bg_color = Color(0.396078, 0.396078, 0.396078, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 3
+shadow_offset = Vector2(2, -2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge2hj"]
+bg_color = Color(0.396078, 0.396078, 0.396078, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 3
+shadow_offset = Vector2(2, -2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hopuj"]
 bg_color = Color(0.686275, 0.117647, 0.0352941, 1)
@@ -164,6 +201,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/hover = SubResource("StyleBoxFlat_nomym")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f011c")
 theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
 text = "Play"
 
@@ -171,7 +209,7 @@ text = "Play"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2vyl3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
 text = "Credits
 "
@@ -180,7 +218,7 @@ text = "Credits
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ge2hj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hopuj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
 text = "Exit
@@ -208,7 +246,10 @@ position = Vector2(410, 854)
 scale = Vector2(0.63037, 0.63037)
 texture = ExtResource("5_jrvcn")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nqdsm")
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_play_button_pressed"]

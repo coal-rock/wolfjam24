@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=38 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="Texture2D" uid="uid://u4c7no06lomu" path="res://assets/Tavern-Sheet.png" id="2_sgvq7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://hmdltn7ixbg6" path="res://assets/coin.png" id="6_dw16j"]
 [ext_resource type="Texture2D" uid="uid://b7m1en30xl4ar" path="res://soft light.png" id="7_3d1g2"]
 [ext_resource type="Texture2D" uid="uid://n1701gwqovfx" path="res://assets/Goblin-Sheet.webp" id="8_2mpc0"]
+[ext_resource type="AudioStream" uid="uid://d3ll5npg7svch" path="res://assets/sounds/goblin_dice_battle.mp3" id="8_hau7l"]
 [ext_resource type="Texture2D" uid="uid://chlrvxvd3auh4" path="res://assets/Hobgoblin-Sheet.webp" id="9_biir7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a84ek"]
@@ -1141,6 +1142,8 @@ text = "Battle!!"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hau7l")
+autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
 
