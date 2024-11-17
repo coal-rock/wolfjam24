@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://2svwgugjltj0"]
+[gd_scene load_steps=13 format=3 uid="uid://2svwgugjltj0"]
 
 [ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_1kq5q"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="1_bvo35"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qag4l"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0flm"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ovnu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbtgm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nomym"]
+bg_color = Color(0.389287, 0.389287, 0.389287, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36fcm"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.513233, 0.513233, 0.513233, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -19,11 +20,10 @@ shadow_color = Color(1, 1, 1, 1)
 shadow_size = 3
 shadow_offset = Vector2(2, -2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx5rn"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbtgm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rq0ky"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to4wj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hopuj"]
+bg_color = Color(0.686275, 0.117647, 0.0352941, 1)
 
 [sub_resource type="Animation" id="Animation_gsems"]
 resource_name = "FadeIn"
@@ -93,7 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_q0flm")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ovnu")
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
@@ -131,30 +131,28 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nomym")
 theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
 text = "Play"
-
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_bvo35")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_fx5rn")
-text = "Setting"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_rq0ky")
-text = "Credits"
+theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
+text = "Credits
+"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_to4wj")
-text = "Exit"
+theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hopuj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
+text = "Exit
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
@@ -169,4 +167,6 @@ offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_play_button_pressed"]

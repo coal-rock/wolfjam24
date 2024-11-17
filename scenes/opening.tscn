@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd3is6xqgkxut"]
+[gd_scene load_steps=11 format=3 uid="uid://dd3is6xqgkxut"]
 
 [ext_resource type="Script" path="res://scripts/opening.gd" id="1_c2qie"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="2_kp08l"]
+[ext_resource type="Texture2D" uid="uid://u4c7no06lomu" path="res://assets/Tavern-Sheet.png" id="3_4fdvo"]
 
 [sub_resource type="GDScript" id="GDScript_2bm3a"]
 script/source = "extends Label
@@ -189,6 +190,18 @@ _data = {
 "RESET": SubResource("Animation_jre82")
 }
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pc4jr"]
+texture = ExtResource("3_4fdvo")
+4:0/size_in_atlas = Vector2i(4, 4)
+4:0/0 = 0
+8:0/size_in_atlas = Vector2i(4, 4)
+8:0/0 = 0
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y7whm"]
+sources/1 = SubResource("TileSetAtlasSource_pc4jr")
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -283,3 +296,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_y7whm")
