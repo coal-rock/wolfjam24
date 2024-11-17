@@ -21,8 +21,14 @@ var anim_count = 0
 var event_counter = 0
 var prefer_roll = -1
 
+var sx
+var sy
+
 func _ready() -> void:
 	spr = $Sprite2D
+	
+	sx = position.x
+	sy = position.y
 	
 	if self.name == "Player 1":
 		bad_num_sound = preload("res://assets/sounds/goblin_bad_num.wav")
@@ -64,8 +70,6 @@ func update_die() -> void:
 	
 var rolldone = false
 func shake_loop():
-	var sx = position.x
-	var sy = position.y
 	rolldone = false
 	while !rolldone:
 		position.x = sx + randf()*10

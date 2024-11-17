@@ -106,6 +106,9 @@ func roll_finished(r: DiceRoller, roll:int):
 		
 		# if both are the same do qte
 		if dice1.spr.frame == dice2.spr.frame && dice1.score > 0 && dice2.score > 0:
+			timer.wait_time = 100
+			timer.one_shot = true 
+			timer.start()
 			$BattleText.text = "Event Battle"
 			qte_is_battle = false
 			dice1.event_counter = 0
@@ -130,7 +133,7 @@ func roll_finished(r: DiceRoller, roll:int):
 		
 func start_battle():
 #	prevent input
-	timer.wait_time = 2
+	timer.wait_time = 20
 	timer.one_shot = true 
 	timer.start()
 	
@@ -221,6 +224,7 @@ func qte_finished(whoWon: DiceRoller):
 			
 	
 	await get_tree().create_timer(2).timeout
+	timer.stop()
 	change_state(GameState.DICE)
 
 func splash_frame(who: AnimatedSprite2D, frame: int):
