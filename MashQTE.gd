@@ -4,11 +4,11 @@ var allowinp = false
 var c1 = 0
 var c2 = 0
 
-var timeleft = 300
+var timeleft = 5
 
 func _ready() -> void:
 	var tx = "mash your button as fast as you can"
-	$Label.text = tx
+	$Label.text = tx+"\n"
 	await get_tree().create_timer(1).timeout
 	$Label.text = tx + "\n in 3.."
 	await get_tree().create_timer(1).timeout
@@ -18,16 +18,11 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	$Label.text = "mash your button as fast as you can !!!"
 	allowinp = true
-
-func _process(delta: float) -> void:
-	if allowinp:
-		if Input.is_action_just_pressed(battle.inputName1):
-			c1+=1
-		if Input.is_action_just_pressed(battle.inputName2):
-			c2+=1
-		$Label.text = "%s left" % timeleft
-		$counter1.text = "%s clicks" % c1
-		$counter2.text = "%s clicks" % c2
+	showtimer()
+	
+func showtimer():
+	while allowinp:
+		$Label.text = "%s seconds left" % timeleft
 		
 		timeleft-=1
 		if timeleft <= 0:
@@ -35,3 +30,13 @@ func _process(delta: float) -> void:
 				battle.qte_finished(battle.dice1)
 			else:
 				battle.qte_finished(battle.dice2)
+		await get_tree().create_timer(1).timeout
+
+func _process(delta: float) -> void:
+	if allowinp:
+		if Input.is_action_just_pressed(battle.inputName1):
+			c1+=1
+		if Input.is_action_just_pressed(battle.inputName2):
+			c2+=1
+		$counter1.text = "%s" % c1
+		$counter2.text = "%s" % c2

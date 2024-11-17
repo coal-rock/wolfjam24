@@ -71,6 +71,7 @@ func roll() -> int:
 func update_die() -> void:
 	spr.visible = false
 	anim_spr.visible = true
+	modulate = Color.DARK_GRAY
 	
 	anim_spr.play(anim_name)
 	$AudioStreamPlayer2D.stream = dice_roll_sound

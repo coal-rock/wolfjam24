@@ -1,0 +1,1 @@
+Hey, we are Team Digital Racecar, and we're very excited to share our game with you. We think it would be best enjoyed if we could demo the game with you in-person. If you'd like to invite us over to give you a full presentation on our game, feel free to ping us on discord "@Team Digital Racecar"! We hope you have lots of fun with our game!

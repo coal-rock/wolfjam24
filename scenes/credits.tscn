@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://n266pwjls0xp"]
+[gd_scene load_steps=3 format=3 uid="uid://n266pwjls0xp"]
+
+[ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_1m1ys"]
+[ext_resource type="FontFile" uid="uid://dbabqa1pweqol" path="res://assets/fonts/Proton Style.ttf" id="2_2y1kn"]
 
 [node name="CanvasLayer" type="Control"]
 layout_mode = 3
@@ -15,105 +18,126 @@ offset_right = 1140.0
 offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("1_1m1ys")
+theme_override_font_sizes/font_size = 120
 text = "Credits"
 
 [node name="NamesVBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 203.0
-offset_right = 408.0
-offset_bottom = 1074.0
+offset_left = 5.0
+offset_top = 186.0
+offset_right = 1040.0
+offset_bottom = 1071.0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Cameron"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Cameron \"Swift\" Drummond"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Cole"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Cole Brazinski"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Ben"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Ben Conti"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Andrew"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Andrew Lukan"
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Cooper"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Cooper Hewison"
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Alex"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Alex Ross"
 horizontal_alignment = 1
 
 [node name="Label7" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Nicholas"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Nicholas Coppola"
 horizontal_alignment = 1
 
 [node name="RolesVBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1142.0
-offset_top = 203.0
-offset_right = 1841.0
-offset_bottom = 1074.0
+offset_left = 963.0
+offset_top = 186.0
+offset_right = 1913.0
+offset_bottom = 1071.0
 theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Producer, Designer"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Producer, Designer, Music"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
 text = "Programmer"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
 text = "Programmer"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
 text = "UI/UX, Designer"
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Programmer, Artist"
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
+text = "Programmer, Artist, Music"
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
 text = "Artist"
 horizontal_alignment = 1
 
 [node name="Label7" type="Label" parent="RolesVBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("2_2y1kn")
+theme_override_font_sizes/font_size = 100
 text = "Designer"
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)

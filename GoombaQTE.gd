@@ -30,8 +30,8 @@ func _process(delta: float) -> void:
 			c1+=1
 		if Input.is_action_just_pressed(battle.inputName2):
 			c2+=1
-		$counter1.text = "%s steaks" % c1
-		$counter2.text = "%s steaks" % c2
+		$counter1.text = "%s" % c1
+		$counter2.text = "%s" % c2
 		
 		timeleft-=1
 		if timeleft <= 0:

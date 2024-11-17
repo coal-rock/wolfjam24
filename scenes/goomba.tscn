@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/goomba.gd" id="1_w0ehe"]
 
 [node name="Goomba" type="Sprite2D"]
+texture_filter = 1
 position = Vector2(86, 72)
 scale = Vector2(3.625, 3.625)
 texture = ExtResource("1_r2sy5")

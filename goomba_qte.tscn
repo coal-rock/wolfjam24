@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://GoombaQTE.gd" id="1_vcguo"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="2_wr1qx"]
-[ext_resource type="FontFile" uid="uid://qqerndesghjx" path="res://assets/fonts/GothicScribble.ttf" id="3_y361x"]
+[ext_resource type="Texture2D" uid="uid://bmd1yp2uhvdd2" path="res://assets/MEAT.png" id="4_aj1mt"]
 
 [node name="GoomaQte" type="Node2D"]
 script = ExtResource("1_vcguo")
@@ -10,28 +10,44 @@ script = ExtResource("1_vcguo")
 [node name="counter1" type="Label" parent="."]
 offset_left = 90.0
 offset_top = 414.0
-offset_right = 554.0
-offset_bottom = 504.0
+offset_right = 438.0
+offset_bottom = 745.0
 theme_override_fonts/font = ExtResource("2_wr1qx")
 theme_override_font_sizes/font_size = 80
-text = "0 clicks"
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="counter2" type="Label" parent="."]
-offset_left = 1322.0
-offset_top = 366.0
-offset_right = 1786.0
-offset_bottom = 448.0
+offset_left = 1430.0
+offset_top = 381.0
+offset_right = 1831.0
+offset_bottom = 749.0
 theme_override_fonts/font = ExtResource("2_wr1qx")
 theme_override_font_sizes/font_size = 80
-text = "0 clicks"
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 41.0
 offset_top = 31.0
 offset_right = 1837.0
 offset_bottom = 118.0
-theme_override_fonts/font = ExtResource("3_y361x")
+theme_override_fonts/font = ExtResource("2_wr1qx")
 theme_override_font_sizes/font_size = 80
 text = "count the piceces of meat!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Meat" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(264, 442)
+scale = Vector2(5.90625, 5.90625)
+texture = ExtResource("4_aj1mt")
+
+[node name="Meat2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1628, 421)
+scale = Vector2(5.90625, 5.90625)
+texture = ExtResource("4_aj1mt")
