@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=37 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
+[ext_resource type="Texture2D" uid="uid://u4c7no06lomu" path="res://assets/Tavern-Sheet.png" id="2_sgvq7"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
 [ext_resource type="Texture2D" uid="uid://dv2b40ep0bjq4" path="res://assets/dice/d6.png" id="3_ovybg"]
 [ext_resource type="Texture2D" uid="uid://dbbx13uvgw0qu" path="res://assets/wooden_interior.png" id="4_d2mj2"]
@@ -10,6 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://b7m1en30xl4ar" path="res://soft light.png" id="7_3d1g2"]
 [ext_resource type="Texture2D" uid="uid://n1701gwqovfx" path="res://assets/Goblin-Sheet.webp" id="8_2mpc0"]
 [ext_resource type="Texture2D" uid="uid://chlrvxvd3auh4" path="res://assets/Hobgoblin-Sheet.webp" id="9_biir7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a84ek"]
+atlas = ExtResource("2_sgvq7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mce80"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a84ek")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ims2e"]
 texture = ExtResource("4_d2mj2")
@@ -847,7 +863,7 @@ _data = {
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7h6ta"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
+[node name="Node2D2" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
 script = ExtResource("1_xenqr")
 score1 = NodePath("Player 1 Score")
 score2 = NodePath("Player 2 Score")
@@ -866,6 +882,24 @@ left2 = "player2Left"
 down2 = "player2Down"
 right2 = "player2Right"
 time_since_coin = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(430, 426)
+scale = Vector2(14, 14)
+sprite_frames = SubResource("SpriteFrames_mce80")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1320, 426)
+scale = Vector2(14, 14)
+sprite_frames = SubResource("SpriteFrames_mce80")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2176, 446)
+scale = Vector2(14, 14)
+sprite_frames = SubResource("SpriteFrames_mce80")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
