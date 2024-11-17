@@ -8,10 +8,10 @@ scale = Vector2(0.998285, 1.02389)
 script = ExtResource("1_qhel7")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 618.06
-offset_top = 247.098
-offset_right = 1138.06
-offset_bottom = 329.098
+offset_left = 6.0
+offset_top = 247.0
+offset_right = 1924.0
+offset_bottom = 645.0
 theme_override_fonts/font = ExtResource("2_7b711")
 theme_override_font_sizes/font_size = 80
 text = "[name of irl game]"
