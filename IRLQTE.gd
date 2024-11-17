@@ -2,7 +2,7 @@ extends QTE
 
 var irlgames = ["Thumb War", "Rock Paper Scissors", "Odds and Evens", "Nose Goes", "Name A"]
 var irldescriptions = []
-var nouns = ["Fruit", "Bird", "State", "Country", "Dog Breed", "Cheese", "Goblin", "Color", "Restaraunt", "Vegetable", "Category"]
+var nouns = ["Fruit", "Bird", "State", "Country", "Dog Breed", "Cheese", "Goblin", "Color", "Restaraunt", "Vegetable"]
 var allowinp = false
 
 func _ready() -> void:
