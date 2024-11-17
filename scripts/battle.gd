@@ -88,6 +88,8 @@ func roll_finished(r: DiceRoller, roll:int):
 		print("BOTH ROLL")
 		dice1.is_rolled = false
 		dice2.is_rolled = false
+		dice1.modulate = Color.WHITE
+		dice2.modulate = Color.WHITE
 		dice1.prefer_roll = -1
 		dice2.prefer_roll = -1
 		timer.wait_time = 0.5
