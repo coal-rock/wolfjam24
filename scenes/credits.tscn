@@ -136,8 +136,6 @@ theme_override_font_sizes/font_size = 100
 text = "Designer"
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="RolesVBoxContainer"]
+layout_mode = 2
 color = Color(0, 0, 0, 1)
