@@ -16,6 +16,7 @@ func _ready() -> void:
 		$Label.text = game + "\n in 3.. 2.. 1.."
 	await get_tree().create_timer(1).timeout
 	allowinp = true
+	battle.play_fanfare()
 	$Label.text = game + "\n\n who won? (press key)"
 
 func _process(delta: float) -> void:
