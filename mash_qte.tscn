@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://737pvrgbldqx"]
+[gd_scene load_steps=4 format=3 uid="uid://bhy304jwecd21"]
 
 [ext_resource type="Script" path="res://MashQTE.gd" id="1_akjvw"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="2_2cerb"]
@@ -15,7 +15,7 @@ offset_right = 626.0
 offset_bottom = 804.0
 theme_override_fonts/font = ExtResource("2_2cerb")
 theme_override_font_sizes/font_size = 80
-text = "2 clicks"
+text = "0 clicks"
 horizontal_alignment = 1
 vertical_alignment = 1
 
