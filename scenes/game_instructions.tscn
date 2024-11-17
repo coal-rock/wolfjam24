@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://fihou4jvmsee"]
+
+[ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_511p5"]
+[ext_resource type="Script" path="res://scripts/game_instructions.gd" id="1_odsyh"]
+[ext_resource type="FontFile" uid="uid://dolmsw4pwjcu4" path="res://assets/fonts/FourthReign-Diamond.otf" id="3_jcja3"]
+
+[node name="CanvasLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_odsyh")
+
+[node name="NamesVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 1921.0
+offset_bottom = 1079.0
+theme_override_constants/separation = 55
+
+[node name="How to Play" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_511p5")
+theme_override_font_sizes/font_size = 30
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="How to Play2" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Rock, Paper, Scissors"
+horizontal_alignment = 1
+
+[node name="How to Play3" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "The classic method used by goblins to solve even the most contentious disputes! Both players must engage in a RPS match now!"
+horizontal_alignment = 1
+
+[node name="How to Play4" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Odds and Evens"
+horizontal_alignment = 1
+
+[node name="How to Play5" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 23
+text = "Each player is assigned a different side, odd or even. Then they simultaneously hold up any number of fingers on one hand and the total number of fingers raised determines the winner."
+horizontal_alignment = 1
+
+[node name="How to Play6" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Nose Goes"
+horizontal_alignment = 1
+
+[node name="How to Play7" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "As fast as possible, each player will attempt to touch their nose as fast as possible. The quickest player wins!"
+horizontal_alignment = 1
+
+[node name="How to Play8" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Name A Category"
+horizontal_alignment = 1
+
+[node name="How to Play9" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Goblins love names! When a player sees a category, they need to name something that fits as soon as possible, the quickest wins"
+horizontal_alignment = 1
+
+[node name="How to Play10" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Thumb War"
+horizontal_alignment = 1
+
+[node name="How to Play11" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Lock hands and pin the other player’s thumb!"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="NamesVBoxContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)

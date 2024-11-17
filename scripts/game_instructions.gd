@@ -1,6 +1,6 @@
-extends TextureRect
+extends Control
 
-@export var next_scene: String = "res://scenes/game_instructions.tscn"  # Path to the next scene
+@export var next_scene: String = "res://scenes/battle.tscn"  # Path to the next scene
 @export var transition_delay: float = 5.0  # Time in seconds before automatic transition
 
 var timer_started = false  # Ensures we only transition once
