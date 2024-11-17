@@ -2,7 +2,7 @@ extends Control
 
 signal text_fade_in_complete
 
-@export var next_scene: String = "res://scenes/battle.tscn"
+@export var next_scene: String = "res://scenes/instructions.tscn"
 
 func _ready():
 	# Connect the signal once in _ready()
@@ -24,4 +24,4 @@ func transition_to_next_scene():
 func _on_fade_out_complete(anim_name: String):
 	if anim_name == "FadeOut":
 		print("Fade-out completed. Changing scene...")
-		get_tree().change_scene_to_file("res://scenes/battle.tscn")
+		get_tree().change_scene_to_file("res://scenes/instructions.tscn")

@@ -5,15 +5,34 @@
 [sub_resource type="GDScript" id="GDScript_drh1l"]
 script/source = "extends TextureRect
 
+@export var next_scene: String = \"res://scenes/battle.tscn\"  # Path to the next scene
+@export var transition_delay: float = 5.0  # Time in seconds before automatic transition
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var timer_started = false  # Ensures we only transition once
 
+func _ready():
+	# Start the timer for the automatic transition
+	var timer = Timer.new()
+	timer.wait_time = transition_delay
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	timer.timeout.connect(_on_timer_timeout)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_timer_timeout():
+	if not timer_started:
+		transition_to_next_scene()
+
+func _input(event):
+	# Detect any keyboard or controller input
+	if event.is_pressed():
+		transition_to_next_scene()
+
+func transition_to_next_scene():
+	if not timer_started:
+		timer_started = true
+		print(\"Transitioning to next scene...\")
+		get_tree().change_scene_to_file(next_scene)
 "
 
 [sub_resource type="Animation" id="Animation_5dtn8"]
@@ -31,21 +50,6 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_f0a7a"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_ht5y2"]
 resource_name = "FadeOut"
 tracks/0/type = "value"
@@ -59,6 +63,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f0a7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8bpgg"]
