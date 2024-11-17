@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8hnknky2w4vo"]
+[gd_scene load_steps=3 format=3 uid="uid://b8hnknky2w4vo"]
 
 [ext_resource type="Script" path="res://IRLQTE.gd" id="1_qhel7"]
+[ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="2_7b711"]
 
 [node name="IrlQte" type="Node2D"]
 scale = Vector2(0.998285, 1.02389)
@@ -11,6 +12,7 @@ offset_left = 618.06
 offset_top = 247.098
 offset_right = 1138.06
 offset_bottom = 329.098
-theme_override_font_sizes/font_size = 68
+theme_override_fonts/font = ExtResource("2_7b711")
+theme_override_font_sizes/font_size = 80
 text = "[name of irl game]"
 horizontal_alignment = 1

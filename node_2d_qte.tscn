@@ -9,6 +9,7 @@ script = ExtResource("1_upxr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+light_mask = 0
 position = Vector2(920, 712)
 texture = ExtResource("2_w6v14")
 
