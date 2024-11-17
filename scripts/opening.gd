@@ -1,7 +1,5 @@
 extends Control
 
-signal text_fade_in_complete
-
 @export var next_scene: String = "res://scenes/instructions.tscn"
 
 func _ready():
