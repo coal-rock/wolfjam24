@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cphhtqilqrk1y"]
+[gd_scene load_steps=4 format=3 uid="uid://fihou4jvmsee"]
 
 [ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_511p5"]
 [ext_resource type="Script" path="res://scripts/game_instructions.gd" id="1_odsyh"]
 [ext_resource type="FontFile" uid="uid://dolmsw4pwjcu4" path="res://assets/fonts/FourthReign-Diamond.otf" id="3_jcja3"]
 
-[node name="CanvasLayer" type="Control"]
+[node name="CanvasLayer2" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_odsyh")
