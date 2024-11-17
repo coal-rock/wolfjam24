@@ -75,6 +75,7 @@ var roller: DiceRoller
 
 # true if the qte is a battle event (when 6 is rolled)
 var qte_is_battle = false
+var battle_is_clash = false
 	
 func roll_finished(r: DiceRoller, roll:int):
 	if r == dice1:
@@ -99,6 +100,7 @@ func roll_finished(r: DiceRoller, roll:int):
 			dice2.event_counter = 0
 			roller = r
 			$BattleText.text = "Clash Battle"
+			battle_is_clash = true
 			start_battle()
 			return
 		
@@ -113,15 +115,16 @@ func roll_finished(r: DiceRoller, roll:int):
 			$AudioStreamPlayer2D.play()
 			await get_tree().create_timer(1.0).timeout
 			start_qte(qte_scenes[randi() % len(qte_scenes)])
-		
 		if dice1.spr.frame == 5:
 			roller = dice1
 			roller.event_counter = 0
 			$BattleText.text = "Battle"
+			battle_is_clash = false
 			start_battle()
 		if dice2.spr.frame == 5:
 			roller = dice2
 			$BattleText.text = "Battle"
+			battle_is_clash = false
 			roller.event_counter = 0
 			start_battle()
 		
@@ -166,23 +169,40 @@ func qte_finished(whoWon: DiceRoller):
 	
 	$WinQTEText.visible = false
 	if qte_is_battle:
-		if whoWon == roller:
-			roller.score += 1
-			if roller == dice1:
+		if battle_is_clash:
+			whoWon.score += 1
+			if whoWon == dice1:
 				splash_frame($Goblin, 3)
 				$AudioStreamPlayer2D.stream = gob_happy.pick_random()
 				$AudioStreamPlayer2D.play()
+				splash_frame($Hobgoblin, 1)
+				$AudioStreamPlayer2D.stream = hob_unhappy.pick_random()
+				$AudioStreamPlayer2D.play()
 			else:
+				splash_frame($Goblin, 1)
+				$AudioStreamPlayer2D.stream = gob_unhappy.pick_random()
+				$AudioStreamPlayer2D.play()
 				splash_frame($Hobgoblin, 3)
 				$AudioStreamPlayer2D.stream = hob_happy.pick_random()
 				$AudioStreamPlayer2D.play()
 		else:
-			if roller == dice1:
-				$AudioStreamPlayer2D.stream = gob_unhappy.pick_random()
-				$AudioStreamPlayer2D.play()
-			if roller == dice2:
-				$AudioStreamPlayer2D.stream = hob_unhappy.pick_random()
-				$AudioStreamPlayer2D.play()
+			if whoWon == roller:
+				roller.score += 1
+				if roller == dice1:
+					splash_frame($Goblin, 3)
+					$AudioStreamPlayer2D.stream = gob_happy.pick_random()
+					$AudioStreamPlayer2D.play()
+				else:
+					splash_frame($Hobgoblin, 3)
+					$AudioStreamPlayer2D.stream = hob_happy.pick_random()
+					$AudioStreamPlayer2D.play()
+			else:
+				if roller == dice1:
+					$AudioStreamPlayer2D.stream = gob_unhappy.pick_random()
+					$AudioStreamPlayer2D.play()
+				if roller == dice2:
+					$AudioStreamPlayer2D.stream = hob_unhappy.pick_random()
+					$AudioStreamPlayer2D.play()
 	else:
 		if whoWon == dice1:
 			dice2.score -= 1
