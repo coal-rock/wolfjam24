@@ -94,10 +94,14 @@ func roll_finished(r: DiceRoller, roll:int):
 			print("implement")
 			dice1.event_counter = 0
 			dice2.event_counter = 0
+			roller = r
+			$BattleText.text = "Clash Battle"
+			start_battle()
 			return
 		
 		# if both are the same do qte
 		if dice1.spr.frame == dice2.spr.frame && dice1.score > 0 && dice2.score > 0:
+			$BattleText.text = "Event Battle"
 			qte_is_battle = false
 			dice1.event_counter = 0
 			dice2.event_counter = 0
@@ -110,9 +114,11 @@ func roll_finished(r: DiceRoller, roll:int):
 		if dice1.spr.frame == 5:
 			roller = dice1
 			roller.event_counter = 0
+			$BattleText.text = "Battle"
 			start_battle()
 		if dice2.spr.frame == 5:
 			roller = dice2
+			$BattleText.text = "Battle"
 			roller.event_counter = 0
 			start_battle()
 		
