@@ -73,12 +73,16 @@ var qte_is_battle = false
 func roll_finished(r: DiceRoller, roll:int):
 	if r == dice1:
 		$GoblinBar1.value += roll
+		dice2.prefer_roll = roll
 	else:
 		$GoblinBar2.value += roll
+		dice1.prefer_roll = roll
 	if dice1.is_rolled && dice2.is_rolled:
 		print("BOTH ROLL")
 		dice1.is_rolled = false
 		dice2.is_rolled = false
+		dice1.prefer_roll = -1
+		dice2.prefer_roll = -1
 		timer.wait_time = 0.5
 		timer.one_shot = true 
 		timer.start()

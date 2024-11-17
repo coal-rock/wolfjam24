@@ -19,6 +19,7 @@ var best_num_sound
 var anim_count = 0
 
 var event_counter = 0
+var prefer_roll = -1
 
 func _ready() -> void:
 	spr = $Sprite2D
@@ -40,6 +41,11 @@ func roll() -> int:
 		roll = (randi() % (sides / 2) + 1) * 2 
 	else:
 		roll = randi() % sides + 1
+	
+	if randi() % 12 == 1:
+		# force collision
+		roll = prefer_roll
+		print("triggered force battle")
 		
 	roll = min(6, roll + bonus)
 	bonus = 0

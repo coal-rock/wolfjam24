@@ -962,6 +962,7 @@ position = Vector2(1615, 288)
 [node name="c1" type="Sprite2D" parent="Player 2 Coin"]
 light_mask = 0
 texture_filter = 1
+position = Vector2(-3, 3.05176e-05)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
@@ -969,7 +970,7 @@ hframes = 9
 [node name="c2" type="Sprite2D" parent="Player 2 Coin"]
 light_mask = 0
 texture_filter = 1
-position = Vector2(72, -3.05176e-05)
+position = Vector2(69, -2.36469e-11)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
@@ -977,7 +978,7 @@ hframes = 9
 [node name="c3" type="Sprite2D" parent="Player 2 Coin"]
 light_mask = 0
 texture_filter = 1
-position = Vector2(144, -1.45519e-11)
+position = Vector2(141, 3.05176e-05)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
@@ -985,7 +986,7 @@ hframes = 9
 [node name="c4" type="Sprite2D" parent="Player 2 Coin"]
 light_mask = 0
 texture_filter = 1
-position = Vector2(208, 0)
+position = Vector2(205, 3.05176e-05)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
