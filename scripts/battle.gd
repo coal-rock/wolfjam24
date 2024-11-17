@@ -292,10 +292,14 @@ func _process(delta):
 			if Input.is_action_just_pressed("player1CollectCoin") && dice1.coins > 0:
 				dice1.coins -= 1
 				dice1.bonus += 1
+				$AudioStreamPlayer2D.stream = coin_collect
+				$AudioStreamPlayer2D.play()
 				
 			if Input.is_action_just_pressed("player2CollectCoin") && dice2.coins > 0:
 				dice2.coins -= 1
 				dice2.bonus += 1
+				$AudioStreamPlayer2D.stream = coin_collect
+				$AudioStreamPlayer2D.play()
 				
 		update_score(score1, dice1.score)
 		update_score(score2, dice2.score)
