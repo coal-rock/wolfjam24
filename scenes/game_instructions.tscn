@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://fihou4jvmsee"]
+[gd_scene load_steps=4 format=3 uid="uid://cphhtqilqrk1y"]
 
 [ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_511p5"]
 [ext_resource type="Script" path="res://scripts/game_instructions.gd" id="1_odsyh"]
@@ -59,6 +59,13 @@ theme_override_font_sizes/font_size = 30
 text = "Nose Goes"
 horizontal_alignment = 1
 
+[node name="How to Play11" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcja3")
+theme_override_font_sizes/font_size = 30
+text = "Lock hands and pin the other player’s thumb!"
+horizontal_alignment = 1
+
 [node name="How to Play7" type="Label" parent="NamesVBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jcja3")
@@ -85,13 +92,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jcja3")
 theme_override_font_sizes/font_size = 30
 text = "Thumb War"
-horizontal_alignment = 1
-
-[node name="How to Play11" type="Label" parent="NamesVBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jcja3")
-theme_override_font_sizes/font_size = 30
-text = "Lock hands and pin the other player’s thumb!"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="NamesVBoxContainer"]
