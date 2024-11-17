@@ -254,11 +254,5 @@ stream = ExtResource("7_nqdsm")
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-<<<<<<< Updated upstream
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-=======
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_play_button_pressed"]
->>>>>>> Stashed changes
