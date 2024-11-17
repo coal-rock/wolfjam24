@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=19 format=3 uid="uid://2svwgugjltj0"]
-=======
-[gd_scene load_steps=15 format=3 uid="uid://2svwgugjltj0"]
->>>>>>> Stashed changes
 
 [ext_resource type="FontFile" uid="uid://cdtqbg3tkcljw" path="res://assets/fonts/FourthReign-BorderDiamond.otf" id="1_1kq5q"]
 [ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="1_bvo35"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qag4l"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://u4c7no06lomu" path="res://assets/Tavern-Sheet.png" id="2_prbf2"]
 [ext_resource type="Texture2D" uid="uid://ue6c76vudi03" path="res://assets/racecar.webp" id="4_j5p0v"]
 [ext_resource type="Texture2D" uid="uid://cajr2neufdaqa" path="res://assets/wolfjam.webp" id="5_jrvcn"]
@@ -33,9 +28,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-=======
-[ext_resource type="AudioStream" uid="uid://bggh3c13pjjls" path="res://assets/sounds/Menu Music.wav" id="4_4eq0q"]
->>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ovnu"]
 
@@ -53,9 +45,7 @@ shadow_color = Color(1, 1, 1, 1)
 shadow_size = 3
 shadow_offset = Vector2(2, -2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l4e3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wca1s"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbtgm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hopuj"]
 bg_color = Color(0.686275, 0.117647, 0.0352941, 1)
@@ -181,7 +171,7 @@ text = "Play"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxFlat_7l4e3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
 text = "Credits
 "
@@ -190,7 +180,7 @@ text = "Credits
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bvo35")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/hover = SubResource("StyleBoxFlat_wca1s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mbtgm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hopuj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_36fcm")
 text = "Exit
@@ -208,7 +198,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-<<<<<<< Updated upstream
 [node name="Racecar" type="Sprite2D" parent="."]
 position = Vector2(1560, 764)
 scale = Vector2(0.762, 0.762)
@@ -218,18 +207,8 @@ texture = ExtResource("4_j5p0v")
 position = Vector2(410, 854)
 scale = Vector2(0.63037, 0.63037)
 texture = ExtResource("5_jrvcn")
-=======
-[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_4eq0q")
-autoplay = true
->>>>>>> Stashed changes
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_play_button_pressed"]
-<<<<<<< Updated upstream
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-=======
-[connection signal="toggled" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_toggled"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
->>>>>>> Stashed changes
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_play_button_pressed"]
