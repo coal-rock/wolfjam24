@@ -7,11 +7,17 @@ var allowinp = false
 
 func _ready() -> void:
 	var game = irlgames[randi() % len(irlgames)]
+	var notimer = false
+	
 	if game == "Name A":
+		notimer = true
 		game = "Name A " + nouns[randi() % len(nouns)]
 	$Label.text = game
+	
+	if game == "Nose Goes":
+		notimer = true
 		
-	if game != "Nose Goes":
+	if !notimer:
 		await get_tree().create_timer(1).timeout
 		$Label.text = game + "\n in 3.."
 		await get_tree().create_timer(1).timeout
