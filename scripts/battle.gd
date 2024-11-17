@@ -71,8 +71,10 @@ var roller: DiceRoller
 var qte_is_battle = false
 	
 func roll_finished(r: DiceRoller, roll:int):
-	
-	
+	if r == dice1:
+		$GoblinBar1.value += roll
+	else:
+		$GoblinBar2.value += roll
 	if dice1.is_rolled && dice2.is_rolled:
 		print("BOTH ROLL")
 		dice1.is_rolled = false
@@ -172,7 +174,9 @@ func splash_frame(who: AnimatedSprite2D, frame: int):
 	who.frame = frame
 	await get_tree().create_timer(1.5).timeout
 	who.frame = 0
-
+func _ready() -> void:
+	$GoblinBar1.value = 0
+	$GoblinBar2.value = 0
 func _on_ready() -> void:
 	handle_roll(dice1)
 	handle_roll(dice2)

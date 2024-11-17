@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=31 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
@@ -729,6 +729,8 @@ polygon = PackedVector2Array(-8.25001, -7.16666, -8.16667, 7.08334, 6.08333, 7.2
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hy8a0"]
 polygon = PackedVector2Array(-8, -7, -8, 7, 6, 7, 6, -7)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lblhs"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0yp0r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01t2n"]
@@ -1014,6 +1016,29 @@ scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
 
+[node name="GoblinBar1" type="TextureProgressBar" parent="."]
+modulate = Color(1, 0.24, 0.24, 1)
+offset_left = 390.0
+offset_top = 119.0
+offset_right = 430.0
+offset_bottom = 159.0
+scale = Vector2(300, 40)
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("PlaceholderTexture2D_lblhs")
+
+[node name="GoblinBar2" type="TextureProgressBar" parent="."]
+modulate = Color(1, 0.24, 0.24, 1)
+offset_left = 1236.0
+offset_top = 117.0
+offset_right = 1276.0
+offset_bottom = 157.0
+scale = Vector2(300, 40)
+max_value = 20.0
+value = 20.0
+fill_mode = 1
+texture_progress = SubResource("PlaceholderTexture2D_lblhs")
+
 [node name="Vignete" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 0.74902)
@@ -1053,9 +1078,9 @@ text = "HOBGOBLIN WINS"
 
 [node name="WinQTEText" type="Label" parent="."]
 visible = false
-offset_left = 79.0
+offset_left = 82.0
 offset_top = 385.0
-offset_right = 1848.0
+offset_right = 1851.0
 offset_bottom = 734.0
 theme_override_fonts/font = ExtResource("4_sea53")
 theme_override_font_sizes/font_size = 150
@@ -1084,11 +1109,15 @@ theme_override_font_sizes/font_size = 96
 text = "+2"
 
 [node name="Goblin" type="AnimatedSprite2D" parent="."]
-position = Vector2(128, 393)
-scale = Vector2(1.38281, 1.38281)
+light_mask = 0
+position = Vector2(535, 228)
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_sjw18")
 
 [node name="Hobgoblin" type="AnimatedSprite2D" parent="."]
+light_mask = 0
+position = Vector2(1380, 230)
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_js51h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
