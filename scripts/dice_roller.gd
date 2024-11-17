@@ -4,6 +4,7 @@ class_name DiceRoller
 @export var is_rolled = false;
 @export var spr: Sprite2D;
 @onready var anim_spr = $AnimatedSprite2D
+
 @export var sides: int = 6;
 @export var score: int = 1;
 @export var last_roll: int = 0;
@@ -11,6 +12,10 @@ class_name DiceRoller
 @export var bonus: int = 0;
 
 var dice_roll_sound = preload("res://assets/sounds/dice_roll.wav")
+var gold_spr = preload("res://assets/dice/gold_d6.png")
+var normal_spr = preload("res://assets/dice/d6.png")
+
+var anim_name = "d6_roll"
 
 var bad_num_sound
 var event_num_sound
@@ -25,7 +30,7 @@ var sx
 var sy
 
 func _ready() -> void:
-	spr = $Sprite2D
+	spr = $Sprite2D;
 	
 	sx = position.x
 	sy = position.y
@@ -38,10 +43,14 @@ func _ready() -> void:
 		bad_num_sound = preload("res://assets/sounds/hob_bad_num.wav")
 		event_num_sound = preload("res://assets/sounds/hob_event_num.wav")
 		best_num_sound = preload("res://assets/sounds/hob_best_num.wav")
-	
+
+
 func roll() -> int:
 #	weight dice after two boring roll
 	var roll
+	
+	anim_name = "d6_roll"
+	spr.texture = normal_spr
 
 	if event_counter >= 2:
 		roll = (randi() % (sides / 2) + 1) * 2 
@@ -63,7 +72,7 @@ func update_die() -> void:
 	spr.visible = false
 	anim_spr.visible = true
 	
-	anim_spr.play("d6_roll")
+	anim_spr.play(anim_name)
 	$AudioStreamPlayer2D.stream = dice_roll_sound
 	$AudioStreamPlayer2D.play()
 	shake_loop()
@@ -77,6 +86,14 @@ func shake_loop():
 		await get_tree().create_timer(0.1).timeout
 	position.x = sx
 	position.y = sy
+
+func add_bonus() -> void:
+	coins -= 1
+	bonus += 1
+	
+	spr.texture = gold_spr
+	anim_name = "d6_roll_gold"
+	
 
 func animation_looped() -> void:
 	anim_count += 1

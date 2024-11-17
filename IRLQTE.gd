@@ -7,7 +7,7 @@ var allowinp = false
 func _ready() -> void:
 	var game = irlgames[randi() % len(irlgames)]
 	$Label.text = game
-	if irlgames != "Nose Goes":
+	if game != "Nose Goes":
 		await get_tree().create_timer(1).timeout
 		$Label.text = game + "\n in 3.."
 		await get_tree().create_timer(1).timeout

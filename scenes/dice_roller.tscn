@@ -1,55 +1,103 @@
-[gd_scene load_steps=10 format=3 uid="uid://sujsmn3rfxt"]
+[gd_scene load_steps=17 format=3 uid="uid://sujsmn3rfxt"]
 
 [ext_resource type="Script" path="res://scripts/dice_roller.gd" id="1_y5p4a"]
 [ext_resource type="Texture2D" uid="uid://dv2b40ep0bjq4" path="res://assets/dice/d6.png" id="2_wyl04"]
+[ext_resource type="Texture2D" uid="uid://rhvhwsfy5fmd" path="res://assets/dice/gold_d6.png" id="3_ghhiy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kksah"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmhyq"]
 atlas = ExtResource("2_wyl04")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nnfpc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygqlq"]
 atlas = ExtResource("2_wyl04")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kgqta"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufwmp"]
 atlas = ExtResource("2_wyl04")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ro10g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uasgg"]
 atlas = ExtResource("2_wyl04")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_en3l6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5043t"]
 atlas = ExtResource("2_wyl04")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ji8ya"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jlub"]
 atlas = ExtResource("2_wyl04")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvn55"]
+atlas = ExtResource("3_ghhiy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odhmo"]
+atlas = ExtResource("3_ghhiy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wub7a"]
+atlas = ExtResource("3_ghhiy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ehk"]
+atlas = ExtResource("3_ghhiy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c72f"]
+atlas = ExtResource("3_ghhiy")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtw58"]
+atlas = ExtResource("3_ghhiy")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cuufy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kksah")
+"texture": SubResource("AtlasTexture_wmhyq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nnfpc")
+"texture": SubResource("AtlasTexture_ygqlq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kgqta")
+"texture": SubResource("AtlasTexture_ufwmp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ro10g")
+"texture": SubResource("AtlasTexture_uasgg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_en3l6")
+"texture": SubResource("AtlasTexture_5043t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ji8ya")
+"texture": SubResource("AtlasTexture_6jlub")
 }],
 "loop": true,
 "name": &"d6_roll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvn55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odhmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wub7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ehk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c72f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtw58")
+}],
+"loop": true,
+"name": &"d6_roll_gold",
 "speed": 6.0
 }]
 
@@ -57,20 +105,34 @@ animations = [{
 script = ExtResource("1_y5p4a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 texture = ExtResource("2_wyl04")
 hframes = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_cuufy")
 animation = &"d6_roll"
-frame_progress = 0.445267
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GoldSprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_ghhiy")
+hframes = 6
+
+[node name="GoldAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-2, 0)
+sprite_frames = SubResource("SpriteFrames_cuufy")
+animation = &"d6_roll_gold"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="animation_looped"]
+[connection signal="animation_finished" from="GoldAnimatedSprite2D" to="." method="animation_finished"]
+[connection signal="animation_looped" from="GoldAnimatedSprite2D" to="." method="animation_looped"]
