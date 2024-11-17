@@ -42,6 +42,9 @@ var qte_scenes = [preload("res://node_2d_qte.tscn"), preload("res://mash_qte.tsc
 var battle_start = preload("res://assets/sounds/battle_start.wav")
 var qte_start = preload("res://assets/sounds/qte_start.wav")
 
+var hob_happy = [preload("res://assets/sounds/hob_happy1.wav"), preload("res://assets/sounds/hob_happy2.wav"), preload("res://assets/sounds/hob_happy3.wav")]
+var gob_happy = [preload("res://assets/sounds/gob_happy2.wav"), preload("res://assets/sounds/gob_happy3.wav")]
+
 var coin_spawn = preload("res://assets/sounds/coin_spawn.wav")
 var coin_collect = preload("res://assets/sounds/coin_collect.wav")
 
@@ -152,27 +155,37 @@ func qte_finished(whoWon: DiceRoller):
 		if whoWon == dice2:
 			$WinQTEText.text = "Hobgoblin Victory"
 	
-	await get_tree().create_timer(2).timeout
-	change_state(GameState.DICE)
 	$WinQTEText.visible = false
 	if qte_is_battle:
 		if whoWon == roller:
 			roller.score += 1
 			if roller == dice1:
 				splash_frame($Goblin, 3)
+				$AudioStreamPlayer2D.stream = gob_happy.pick_random()
+				$AudioStreamPlayer2D.play()
 			else:
 				splash_frame($Hobgoblin, 3)
+				$AudioStreamPlayer2D.stream = hob_happy.pick_random()
+				$AudioStreamPlayer2D.play()
 	else:
 		if whoWon == dice1:
 			dice2.score -= 1
 			dice1.score += 1
 			splash_frame($Goblin, 3)
 			splash_frame($Hobgoblin, 1)
+			$AudioStreamPlayer2D.stream = gob_happy.pick_random()
+			$AudioStreamPlayer2D.play()
 		else:
 			dice1.score -= 1
 			dice2.score += 1
 			splash_frame($Goblin, 1)
 			splash_frame($Hobgoblin, 3)
+			$AudioStreamPlayer2D.stream = hob_happy.pick_random()
+			$AudioStreamPlayer2D.play()
+			
+	
+	await get_tree().create_timer(2).timeout
+	change_state(GameState.DICE)
 
 func splash_frame(who: AnimatedSprite2D, frame: int):
 	who.frame = frame
