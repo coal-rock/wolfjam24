@@ -26,7 +26,7 @@ func reinit() -> void:
 	await get_tree().create_timer(1).timeout
 	mylabel.text = "press!"
 	timeleft = 300
-	selectedinput = inputs[randi() % len(inputs)]
+	selectedinput = inputs.pick_random()
 	allowinp = true
 	# show direction now
 	var spriets = {

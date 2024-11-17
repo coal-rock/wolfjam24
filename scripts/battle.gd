@@ -119,7 +119,7 @@ func roll_finished(r: DiceRoller, roll:int):
 			$AudioStreamPlayer2D.stream = qte_start
 			$AudioStreamPlayer2D.play()
 			await get_tree().create_timer(1.0).timeout
-			start_qte(qte_scenes[randi() % len(qte_scenes)])
+			start_qte(qte_scenes.pick_random())
 		if dice1.spr.frame == 5:
 			roller = dice1
 			roller.event_counter = 0

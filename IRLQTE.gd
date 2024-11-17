@@ -6,12 +6,12 @@ var nouns = ["Fruit", "Bird", "State", "Country", "Dog Breed", "Cheese", "Goblin
 var allowinp = false
 
 func _ready() -> void:
-	var game = irlgames[randi() % len(irlgames)]
+	var game = irlgames.pick_random()
 	var notimer = false
 	
 	if game == "Name A":
 		notimer = true
-		game = "Name A " + nouns[randi() % len(nouns)]
+		game = "Name A " + nouns.pick_random()
 	$Label.text = game
 	
 	if game == "Nose Goes":
