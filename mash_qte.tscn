@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://737pvrgbldqx"]
+[gd_scene load_steps=4 format=3 uid="uid://737pvrgbldqx"]
 
 [ext_resource type="Script" path="res://MashQTE.gd" id="1_akjvw"]
+[ext_resource type="FontFile" uid="uid://dd0e8l2bo52pm" path="res://assets/fonts/Akvaléir_Normal_v2007.ttf" id="2_2cerb"]
+[ext_resource type="FontFile" uid="uid://qqerndesghjx" path="res://assets/fonts/GothicScribble.ttf" id="3_81x2h"]
 
 [node name="MashQte" type="Node2D"]
+position = Vector2(2, 0)
 script = ExtResource("1_akjvw")
 
 [node name="counter1" type="Label" parent="."]
@@ -10,8 +13,9 @@ offset_left = 28.0
 offset_top = 380.0
 offset_right = 626.0
 offset_bottom = 804.0
-theme_override_font_sizes/font_size = 59
-text = "0 clicks"
+theme_override_fonts/font = ExtResource("2_2cerb")
+theme_override_font_sizes/font_size = 80
+text = "2 clicks"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -20,7 +24,8 @@ offset_left = 1322.0
 offset_top = 366.0
 offset_right = 1892.0
 offset_bottom = 802.0
-theme_override_font_sizes/font_size = 59
+theme_override_fonts/font = ExtResource("2_2cerb")
+theme_override_font_sizes/font_size = 80
 text = "0 clicks"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -30,7 +35,8 @@ offset_left = 40.0
 offset_top = 36.0
 offset_right = 1907.0
 offset_bottom = 118.0
-theme_override_font_sizes/font_size = 59
+theme_override_fonts/font = ExtResource("3_81x2h")
+theme_override_font_sizes/font_size = 80
 text = "mash your button ! !"
 horizontal_alignment = 1
 vertical_alignment = 1

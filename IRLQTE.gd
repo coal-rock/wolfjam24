@@ -1,7 +1,7 @@
 extends QTE
 
-var irlgames = ["Thumb War!!", "Rock Paper Scissors!!"]
-
+var irlgames = ["Thumb War", "Rock Paper Scissors", "Odds and Evens", "Nose Goes"]
+var irldescriptions = []
 var allowinp = false
 
 func _ready() -> void:

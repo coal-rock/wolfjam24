@@ -998,28 +998,33 @@ frame = 5
 position = Vector2(1615, 288)
 
 [node name="c1" type="Sprite2D" parent="Player 2 Coin"]
+light_mask = 0
 texture_filter = 1
+position = Vector2(-3, 3.05176e-05)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="c2" type="Sprite2D" parent="Player 2 Coin"]
+light_mask = 0
 texture_filter = 1
-position = Vector2(72, -3.05176e-05)
+position = Vector2(69, -2.36469e-11)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="c3" type="Sprite2D" parent="Player 2 Coin"]
+light_mask = 0
 texture_filter = 1
-position = Vector2(144, -1.45519e-11)
+position = Vector2(141, 3.05176e-05)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="c4" type="Sprite2D" parent="Player 2 Coin"]
+light_mask = 0
 texture_filter = 1
-position = Vector2(208, 0)
+position = Vector2(205, 3.05176e-05)
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
@@ -1028,12 +1033,14 @@ hframes = 9
 position = Vector2(95, 288)
 
 [node name="c1" type="Sprite2D" parent="Player 1 Coin"]
+light_mask = 0
 texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="c2" type="Sprite2D" parent="Player 1 Coin"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(72, -3.05176e-05)
 scale = Vector2(5, 5)
@@ -1041,6 +1048,7 @@ texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="c3" type="Sprite2D" parent="Player 1 Coin"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(144, -1.45519e-11)
 scale = Vector2(5, 5)
@@ -1048,6 +1056,7 @@ texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="c4" type="Sprite2D" parent="Player 1 Coin"]
+light_mask = 0
 texture_filter = 1
 position = Vector2(208, 0)
 scale = Vector2(5, 5)
@@ -1172,7 +1181,7 @@ offset_bottom = 1080.0
 color = Color(0.204105, 0.085689, 0, 0.74902)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(606, 510.609)
+position = Vector2(606, 509)
 scale = Vector2(1.07922, 1.07922)
 energy = 4.16
 range_z_min = 0

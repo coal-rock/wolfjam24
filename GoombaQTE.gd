@@ -23,15 +23,15 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	$Label.text = "Count the gold coins! (%s left)" % timeleft
+	$Label.text = "Count the steaks!"
 	
 	if allowinp:
 		if Input.is_action_just_pressed(battle.inputName1):
 			c1+=1
 		if Input.is_action_just_pressed(battle.inputName2):
 			c2+=1
-		$counter1.text = "%s coins" % c1
-		$counter2.text = "%s coins" % c2
+		$counter1.text = "%s steaks" % c1
+		$counter2.text = "%s steaks" % c2
 		
 		timeleft-=1
 		if timeleft <= 0:
