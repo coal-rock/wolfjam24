@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://n266pwjls0xp"]
+
+[node name="CanvasLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 798.0
+offset_top = 26.0
+offset_right = 1140.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+
+[node name="NamesVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 203.0
+offset_right = 408.0
+offset_bottom = 1074.0
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Cameron"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Cole"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Ben"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Andrew"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Cooper"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Alex"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="NamesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Nicholas"
+horizontal_alignment = 1
+
+[node name="RolesVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1142.0
+offset_top = 203.0
+offset_right = 1841.0
+offset_bottom = 1074.0
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Producer, Designer"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Programmer"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Programmer"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "UI/UX, Designer"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Programmer, Artist"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Artist"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="RolesVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Designer"
+horizontal_alignment = 1
