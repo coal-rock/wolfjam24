@@ -5,7 +5,7 @@ extends Control
 func _on_play_button_pressed():
 	print("Starting fade-out...")
 	$AnimationPlayer.play("FadeOut")
-	get_tree().change_scene_to_file("res://scenes/opening.tscn")
+	tree.change_scene_to_file("res://scenes/opening.tscn")
 
 func _on_credits_button_pressed():
 	tree.change_scene_to_file("res://scenes/credits.tscn")
