@@ -17,7 +17,7 @@ func _ready() -> void:
 var allowinp = false
 	
 func reinit() -> void:
-	var tx = "Press the direction in 3.."
+	var tx = "Press the direction in\n3.."
 	mylabel.text = tx
 	await get_tree().create_timer(1).timeout
 	mylabel.text = tx + "2.."
