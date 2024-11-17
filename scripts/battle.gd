@@ -45,6 +45,9 @@ var qte_start = preload("res://assets/sounds/qte_start.wav")
 var hob_happy = [preload("res://assets/sounds/hob_happy1.wav"), preload("res://assets/sounds/hob_happy2.wav"), preload("res://assets/sounds/hob_happy3.wav")]
 var gob_happy = [preload("res://assets/sounds/gob_happy2.wav"), preload("res://assets/sounds/gob_happy3.wav")]
 
+var gob_unhappy = [preload("res://assets/sounds/gob_unhappy1.wav"), preload("res://assets/sounds/gob_unhappy2.wav"), preload("res://assets/sounds/gob_unhappy3.wav")]
+var hob_unhappy = [preload("res://assets/sounds/hob_unhappy1.wav"), preload("res://assets/sounds/hob_unhappy2.wav"), preload("res://assets/sounds/hob_unhappy3.wav")]
+
 var coin_spawn = preload("res://assets/sounds/coin_spawn.wav")
 var coin_collect = preload("res://assets/sounds/coin_collect.wav")
 
@@ -172,6 +175,13 @@ func qte_finished(whoWon: DiceRoller):
 			else:
 				splash_frame($Hobgoblin, 3)
 				$AudioStreamPlayer2D.stream = hob_happy.pick_random()
+				$AudioStreamPlayer2D.play()
+		else:
+			if roller == dice1:
+				$AudioStreamPlayer2D.stream = gob_unhappy.pick_random()
+				$AudioStreamPlayer2D.play()
+			if roller == dice2:
+				$AudioStreamPlayer2D.stream = hob_unhappy.pick_random()
 				$AudioStreamPlayer2D.play()
 	else:
 		if whoWon == dice1:
