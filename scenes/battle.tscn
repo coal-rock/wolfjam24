@@ -1064,6 +1064,7 @@ texture = ExtResource("6_dw16j")
 hframes = 9
 
 [node name="GoblinBar1" type="TextureProgressBar" parent="."]
+visible = false
 modulate = Color(1, 0.24, 0.24, 1)
 offset_left = 390.0
 offset_top = 119.0
@@ -1075,6 +1076,7 @@ value = 20.0
 texture_progress = SubResource("PlaceholderTexture2D_lblhs")
 
 [node name="GoblinBar2" type="TextureProgressBar" parent="."]
+visible = false
 modulate = Color(1, 0.24, 0.24, 1)
 offset_left = 1236.0
 offset_top = 117.0
