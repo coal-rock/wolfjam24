@@ -330,6 +330,14 @@ func _process(delta):
 		update_bonus(bonus2, dice2.bonus)
 		
 	if state == GameState.WIN:
-		win_vignette.visible = true
-		win_text.text = winner + " wins!"
-		win_text.visible = true
+		Globals.winner = winner
+		get_tree().change_scene_to_file("res://scenes/win.tscn")
+		
+		
+		#win_scene.set_winner(winner)
+			
+		
+		
+		#win_vignette.visible = true
+		#win_text.text = winner + " wins!"
+		#win_text.visible = true

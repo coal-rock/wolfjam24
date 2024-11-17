@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cc3gk0nl4onja"
+path="res://.godot/imported/Hobgoblin Victory 1.wav-d853177d72077c59a21cbf8010e46414.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Hobgoblin Victory 1.wav"
+dest_files=["res://.godot/imported/Hobgoblin Victory 1.wav-d853177d72077c59a21cbf8010e46414.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

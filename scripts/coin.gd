@@ -4,7 +4,7 @@ var elapsed_time = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.global_position = Vector2(randi_range(100, 1820), 0)
+	self.global_position = Vector2(randi_range(40, 1880), 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
