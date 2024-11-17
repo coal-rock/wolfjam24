@@ -139,10 +139,13 @@ func start_battle():
 	
 	qte_is_battle = true
 	await get_tree().create_timer(0.5).timeout
-	$AudioStreamPlayer2D.stream = battle_start
+	$AudioStreamPlayer2D.stream = preload("res://assets/sounds/qte_start.wav")
 	$AudioStreamPlayer2D.play()
 	await get_tree().create_timer(1.0).timeout
 	start_qte(preload("res://irl_qte.tscn"))
+func play_fanfare():
+	$AudioStreamPlayer2D.stream = battle_start
+	$AudioStreamPlayer2D.play()
 
 func start_qte(scene):
 #	prevent input
