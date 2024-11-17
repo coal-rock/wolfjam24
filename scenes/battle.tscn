@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dcms7flx1mvlh"]
+[gd_scene load_steps=34 format=4 uid="uid://dcms7flx1mvlh"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_xenqr"]
 [ext_resource type="PackedScene" uid="uid://sujsmn3rfxt" path="res://scenes/dice_roller.tscn" id="2_yam4a"]
@@ -807,6 +807,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_ujfri"]
+resource_name = "flicker"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.8, 1.43333, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.8, 3.8, 3.5, 3.0]
+}
+
+[sub_resource type="Animation" id="Animation_dvakw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.16]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qehyu"]
+_data = {
+"RESET": SubResource("Animation_dvakw"),
+"flicker": SubResource("Animation_ujfri")
+}
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7h6ta"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("score1", "score2", "coin1", "coin2", "dice1", "dice2")]
@@ -1136,20 +1174,32 @@ color = Color(0.204105, 0.085689, 0, 0.74902)
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(606, 510.609)
 scale = Vector2(1.07922, 1.07922)
-energy = 3.74
+energy = 4.16
 range_z_min = 0
 range_z_max = 1
 shadow_enabled = true
 texture = ExtResource("7_3d1g2")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PointLight2D"]
+libraries = {
+"": SubResource("AnimationLibrary_qehyu")
+}
+autoplay = "flicker"
+
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(1326, 510.609)
 scale = Vector2(1.07922, 1.07922)
-energy = 3.74
+energy = 4.16
 range_z_min = 0
 range_z_max = 1
 shadow_enabled = true
 texture = ExtResource("7_3d1g2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PointLight2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_qehyu")
+}
+autoplay = "flicker"
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_7h6ta")
